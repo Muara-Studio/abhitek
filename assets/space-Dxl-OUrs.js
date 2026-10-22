@@ -1,0 +1,1 @@
+var e=`abhitek.space.personal`;function t(t){try{t?sessionStorage.setItem(e,`1`):sessionStorage.removeItem(e)}catch{}}function n(){try{return sessionStorage.getItem(e)===`1`}catch{return!1}}export{t as n,n as t};

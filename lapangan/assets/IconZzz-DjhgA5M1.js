@@ -1,0 +1,1 @@
+import{Ft as e}from"./kit-Dd9gVMlu.js";var t=e(`outline`,`zzz`,`Zzz`,[[`path`,{d:`M4 12h6l-6 8h6`,key:`svg-0`}],[`path`,{d:`M14 4h6l-6 8h6`,key:`svg-1`}]]);export{t};

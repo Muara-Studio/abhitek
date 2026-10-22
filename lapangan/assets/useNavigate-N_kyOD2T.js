@@ -1,0 +1,1 @@
+import{Sr as e,fn as t,wr as n}from"./kit-Dd9gVMlu.js";var r=n(e(),1),i=r.use,a=r.useLayoutEffect;function o(e){let n=t();return r.useCallback(t=>n.navigate({...t,from:t.from??e?.from}),[e?.from,n])}function s(e){let n=t(),i=o(),s=r.useRef(null);return a(()=>{s.current!==e&&(i(e),s.current=e)},[n,e,i]),null}export{a as i,o as n,i as r,s as t};

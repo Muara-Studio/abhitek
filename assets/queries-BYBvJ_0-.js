@@ -1,0 +1,1 @@
+import{t as e}from"./useQuery-Dh8puJ5r.js";import{n as t,r as n}from"./client-DkeSWRGk.js";var r=[`org`,`settings`],i=(i=!0)=>e({queryKey:r,queryFn:()=>n(t.GET(`/v1/org/settings`)),enabled:i}),a=e=>n(t.PUT(`/v1/org/settings`,{body:e}));export{a as n,i as r,r as t};
