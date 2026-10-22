@@ -1,0 +1,1 @@
+import{i as e}from"./useButton-DgDyCumr.js";var t=e(`outline`,`gps`,`Gps`,[[`path`,{d:`M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0`,key:`svg-0`}],[`path`,{d:`M12 17l-1 -4l-4 -1l9 -4l-4 9`,key:`svg-1`}]]);export{t};

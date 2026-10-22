@@ -1,1 +1,0 @@
-import{br as e}from"./kit-Dd9gVMlu.js";var t=e();function n({children:e=`belum tersedia`}){return(0,t.jsx)(`span`,{className:`inline-flex items-center rounded-md border border-dashed border-white/25 px-1.5 py-0.5 text-[11px] font-medium text-white/55`,children:e})}export{n as t};

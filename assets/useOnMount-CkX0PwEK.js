@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-CbXtAM7H.js";import{W as t,Z as n}from"./useButton-DgDyCumr.js";var r=e(n(),1);function i(e){r.useEffect(e,t)}export{i as t};

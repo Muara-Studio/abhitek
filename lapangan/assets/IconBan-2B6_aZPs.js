@@ -1,1 +1,0 @@
-import{Ft as e}from"./kit-Dd9gVMlu.js";var t=e(`outline`,`ban`,`Ban`,[[`path`,{d:`M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0`,key:`svg-0`}],[`path`,{d:`M5.7 5.7l12.6 12.6`,key:`svg-1`}]]);export{t};

@@ -1,1 +1,0 @@
-import{n as e}from"./rolldown-runtime-CbXtAM7H.js";import{B as t,N as n}from"./useButton-CEB_QEXY.js";var r=e(t(),1);function i(e){r.useEffect(e,n)}export{i as t};

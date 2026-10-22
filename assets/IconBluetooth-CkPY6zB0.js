@@ -1,1 +1,0 @@
-import{i as e}from"./useButton-CEB_QEXY.js";var t=e(`outline`,`bluetooth`,`Bluetooth`,[[`path`,{d:`M7 8l10 8l-5 4l0 -16l5 4l-10 8`,key:`svg-0`}]]);export{t};
