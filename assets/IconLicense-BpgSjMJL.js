@@ -1,0 +1,1 @@
+import{i as e}from"./useButton-C83DlUt5.js";var t=e(`outline`,`license`,`License`,[[`path`,{d:`M15 21h-9a3 3 0 0 1 -3 -3v-1h10v2a2 2 0 0 0 4 0v-14a2 2 0 1 1 2 2h-2m2 -4h-11a3 3 0 0 0 -3 3v11`,key:`svg-0`}],[`path`,{d:`M9 7l4 0`,key:`svg-1`}],[`path`,{d:`M9 11l4 0`,key:`svg-2`}]]);export{t};

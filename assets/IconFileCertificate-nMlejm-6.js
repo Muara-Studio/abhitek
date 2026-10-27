@@ -1,1 +1,0 @@
-import{i as e}from"./useButton-DgDyCumr.js";var t=e(`outline`,`file-certificate`,`FileCertificate`,[[`path`,{d:`M14 3v4a1 1 0 0 0 1 1h4`,key:`svg-0`}],[`path`,{d:`M5 8v-3a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-5`,key:`svg-1`}],[`path`,{d:`M3 14a3 3 0 1 0 6 0a3 3 0 1 0 -6 0`,key:`svg-2`}],[`path`,{d:`M4.5 17l-1.5 5l3 -1.5l3 1.5l-1.5 -5`,key:`svg-3`}]]);export{t};

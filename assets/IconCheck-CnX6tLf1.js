@@ -1,0 +1,1 @@
+import{i as e}from"./useButton-C83DlUt5.js";var t=e(`outline`,`check`,`Check`,[[`path`,{d:`M5 12l5 5l10 -10`,key:`svg-0`}]]);export{t};

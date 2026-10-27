@@ -1,0 +1,1 @@
+import{n as e,t}from"./ScanScreen-CFk7ef7n.js";export{e as copyFor,t as default};

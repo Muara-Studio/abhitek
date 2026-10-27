@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/TransfersScreen-CBEMFUuq.js","assets/kit-su2_395i.js","assets/preload-helper-BG4L8SnN.js","assets/mutation-BT0HBjCp.js","assets/IconCircleX-gkV8xr9j.js","assets/session-VjAMj97j.js","assets/strings-BJJiWxUq.js","assets/data-D7l5FGyG.js"])))=>i.map(i=>d[i]);
+import{t as e}from"./preload-helper-BG4L8SnN.js";var t=[{path:`/kiriman`,layout:`full`,load:()=>e(()=>import(`./TransfersScreen-CBEMFUuq.js`),__vite__mapDeps([0,1,2,3,4,5,6,7]))}];export{t as routes};

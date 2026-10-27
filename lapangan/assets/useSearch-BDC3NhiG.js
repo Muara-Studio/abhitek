@@ -1,0 +1,1 @@
+import{_n as e}from"./kit-su2_395i.js";function t(t){return e({from:t.from,strict:t.strict,shouldThrow:t.shouldThrow,structuralSharing:t.structuralSharing,select:e=>t.select?t.select(e.search):e.search})}export{t};

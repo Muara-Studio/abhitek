@@ -1,14 +1,15 @@
 // ABHITEK Lapangan service worker: Web Push (SRS NOT-7) and an app shell that opens without a connection.
 //
-// WHY only a shell: offline WORK (queue + sync, first-write-wins) is native-only, so the PWA caches just enough to
-// start and tell the user it is offline — the HTML shell and the hashed build files it loads. Never cached:
+// WHY only a shell: the PWA caches just enough to start offline — the HTML shell and the hashed build files it loads.
+// Offline inspections (cache + queue + sync, first-write-wins) live in the app's own IndexedDB (src/lib/fieldDb.ts,
+// src/lib/outbox.ts, cleared on sign-out), never here. Never cached:
 //   /v1/*    live data and writes; a stale answer would look current, a replayed write could double a record
 //   /n/*     public chip verification must ask the server every time (a blocked chip must stop verifying)
 //   other origins (map tiles, catalog photos, Web Push endpoints) — not ours to keep
 // VERSION is replaced with a build hash by phone/vite.config.ts, so each deploy installs a fresh cache and drops the
 // old one (hashed /assets files would otherwise pile up). Registered at start in production builds (src/lib/pwa.ts);
 // `@/lib/push` registers the same URL on demand, which resolves to this same registration.
-const VERSION = 'abhitek-shell-a2607610897d'
+const VERSION = 'abhitek-shell-198fa6557810'
 // Every path is relative to the worker's scope: '/' in production, '/abhitek/lapangan/' on GitHub Pages. /v1 stays
 // absolute — the API (or the demo backend) lives at the origin root whatever the app's base is.
 const BASE = new URL(self.registration.scope).pathname

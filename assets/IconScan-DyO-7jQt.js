@@ -1,1 +1,0 @@
-import{i as e}from"./useButton-DgDyCumr.js";var t=e(`outline`,`scan`,`Scan`,[[`path`,{d:`M5 12h14`,key:`svg-0`}],[`path`,{d:`M3 7v-2a2 2 0 0 1 2 -2h2`,key:`svg-1`}],[`path`,{d:`M3 17v2a2 2 0 0 0 2 2h2`,key:`svg-2`}],[`path`,{d:`M17 3h2a2 2 0 0 1 2 2v2`,key:`svg-3`}],[`path`,{d:`M17 21h2a2 2 0 0 0 2 -2v-2`,key:`svg-4`}]]);export{t};
