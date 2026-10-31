@@ -1,1 +1,0 @@
-import{i as e}from"./useButton-C83DlUt5.js";var t=e(`outline`,`chevron-left`,`ChevronLeft`,[[`path`,{d:`M15 6l-6 6l6 6`,key:`svg-0`}]]);export{t};

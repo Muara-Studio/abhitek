@@ -1,0 +1,1 @@
+import{Vt as e}from"./kit-EN0e5W84.js";var t=e(`outline`,`arrows-exchange`,`ArrowsExchange`,[[`path`,{d:`M7 10h14l-4 -4`,key:`svg-0`}],[`path`,{d:`M17 14h-14l4 4`,key:`svg-1`}]]);export{t};

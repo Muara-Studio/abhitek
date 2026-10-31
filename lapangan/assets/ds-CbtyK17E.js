@@ -1,0 +1,1 @@
+import{Ar as e,on as t}from"./kit-EN0e5W84.js";import{t as n}from"./strings-BYYjCuz4.js";var r=e();function i({children:e}){let i=t(n);return(0,r.jsx)(`span`,{className:`inline-flex items-center rounded-md border border-dashed border-white/25 px-1.5 py-0.5 text-[11px] font-medium text-white/55`,children:e??i.pending})}export{i as t};

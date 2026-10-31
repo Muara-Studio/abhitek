@@ -1,1 +1,0 @@
-import{Vt as e}from"./kit-su2_395i.js";var t=e(`outline`,`trash-x`,`TrashX`,[[`path`,{d:`M4 7h16`,key:`svg-0`}],[`path`,{d:`M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12`,key:`svg-1`}],[`path`,{d:`M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3`,key:`svg-2`}],[`path`,{d:`M10 12l4 4m0 -4l-4 4`,key:`svg-3`}]]);export{t};

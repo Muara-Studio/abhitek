@@ -9,7 +9,7 @@
 // VERSION is replaced with a build hash by phone/vite.config.ts, so each deploy installs a fresh cache and drops the
 // old one (hashed /assets files would otherwise pile up). Registered at start in production builds (src/lib/pwa.ts);
 // `@/lib/push` registers the same URL on demand, which resolves to this same registration.
-const VERSION = 'abhitek-shell-198fa6557810'
+const VERSION = 'abhitek-shell-5c2e00dcb5cd'
 // Every path is relative to the worker's scope: '/' in production, '/abhitek/lapangan/' on GitHub Pages. /v1 stays
 // absolute — the API (or the demo backend) lives at the origin root whatever the app's base is.
 const BASE = new URL(self.registration.scope).pathname
