@@ -1,1 +1,0 @@
-import{n as e}from"./rolldown-runtime-CbXtAM7H.js";import{U as t,b as n,jt as r}from"./useButton-ftH0xq5o.js";var i=e(r(),1);function a(e,r){let a=i.useRef(e),o=n(r);t(()=>{a.current!==e&&o(a.current),a.current=e},[e,o])}export{a as t};
