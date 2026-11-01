@@ -1,1 +1,0 @@
-import{n as e,t}from"./ScanScreen-hkWbDyWS.js";export{e as copyFor,t as default};
