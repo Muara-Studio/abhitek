@@ -216,6 +216,63 @@
   }
   for (const a of $$('.menu a')) a.addEventListener('click', () => a.closest('details').removeAttribute('open'))
 
+  // ---- brand rails: a second copy of each list makes the loop seamless; a button, hover or focus pauses them ----
+  const rails = [...document.querySelectorAll('[data-rail]')]
+  for (const rail of rails) {
+    const list = rail.querySelector('.railtrack'), belt = document.createElement('div'), twin = list.cloneNode(true)
+    belt.className = 'belt'; twin.setAttribute('aria-hidden', 'true')
+    for (const img of twin.querySelectorAll('img')) img.alt = ''
+    for (const li of twin.querySelectorAll('li')) li.removeAttribute('tabindex')
+    rail.append(belt); belt.append(list, twin)
+  }
+  const pauseBtn = document.querySelector('.railpause')
+  if (pauseBtn) pauseBtn.addEventListener('click', () => { const on = pauseBtn.getAttribute('aria-pressed') !== 'true'; pauseBtn.setAttribute('aria-pressed', String(on)); for (const r of rails) r.dataset.paused = String(on) })
+
+  // ---- two audiences: one banner is chosen, its panel shows ----
+  const audTabs = [...document.querySelectorAll('.audtab')]
+  for (const tab of audTabs) tab.addEventListener('click', () => {
+    for (const x of audTabs) { const on = x === tab; x.setAttribute('aria-selected', String(on)); document.getElementById(x.getAttribute('aria-controls')).hidden = !on }
+  })
+
+  // ---- the demo follows the device: a phone opens the field app, a computer opens the desk dashboard ----
+  const onPhone = matchMedia('(max-width: 760px)').matches || (matchMedia('(pointer: coarse)').matches && matchMedia('(max-width: 1024px)').matches)
+  if (onPhone) for (const a of document.querySelectorAll('a[href$="/abhitek/app/"]')) a.href = a.href + 'lapangan/'
+
+  // ---- catalogue finder: every model of the main catalogue, filtered in the browser (assets/katalog.json) ----
+  const finderEl = document.querySelector('[data-finder]')
+  if (finderEl) {
+    const KINDS = [['', 'Semua', 'All'], ['harness', 'Harness', 'Harnesses'], ['helm', 'Helm', 'Helmets'], ['konektor', 'Karabiner & konektor', 'Carabiners & connectors'], ['descender', 'Descender & ascender', 'Descenders & ascenders'],
+      ['tali', 'Tali', 'Rope'], ['lanyard', 'Lanyard', 'Lanyards'], ['anchor', 'Anchor & sling', 'Anchors & slings'], ['pulley', 'Pulley', 'Pulleys'], ['penahan-jatuh', 'Penahan jatuh', 'Fall arresters'], ['peredam', 'Peredam', 'Absorbers'], ['rescue', 'Rescue', 'Rescue']]
+    const q = document.querySelector('#fq'), brand = document.querySelector('#fb'), chips = document.querySelector('#ft'), out = document.querySelector('#fr'), count = document.querySelector('#fc'), moreBtn = document.querySelector('#fm')
+    const params = new URLSearchParams(location.search)
+    let rows = [], kind = KINDS.some((k) => k[0] === params.get('jenis')) ? params.get('jenis') : '', shown = 24
+    q.value = params.get('q') ?? ''
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
+    const label = (k) => { const x = KINDS.find((y) => y[0] === k); return x ? t(x[1], x[2]) : t('Lainnya', 'Other') }
+    const draw = () => {
+      chips.innerHTML = KINDS.map(([k, id, en]) => `<button class="chipbtn" type="button" data-k="${k}" aria-pressed="${k === kind}">${t(id, en)}</button>`).join('')
+      if (!rows.length) { count.textContent = t('Memuat katalog...', 'Loading the catalogue...'); return }
+      const words = q.value.toLowerCase().split(/\s+/).filter(Boolean)
+      const hit = rows.filter((r) => (!kind || r[3] === kind) && (!brand.value || r[0] === brand.value) && words.every((w) => (r[0] + ' ' + r[1] + ' ' + r[2]).toLowerCase().includes(w)))
+      const n = hit.length.toLocaleString(lang === 'en' ? 'en-GB' : 'id-ID'), all = rows.length.toLocaleString(lang === 'en' ? 'en-GB' : 'id-ID')
+      count.innerHTML = hit.length ? t(`<b>${n}</b> model cocok, dari ${all} model di katalog.`, `<b>${n}</b> matching models, out of ${all} in the catalogue.`)
+        : t('Tidak ada model yang cocok. Coba kata lain, atau tambahkan model itu sendiri saat mendaftarkan alat.', 'No model matches. Try another word, or add that model yourself when you register the tool.')
+      out.innerHTML = hit.slice(0, shown).map((r) => `<article class="model"><p class="b"><span>${esc(r[0])}</span><em>${r[3] === 'lain' ? '' : label(r[3])}</em></p><h3>${esc(r[1])}</h3><p class="std">${r[2] ? r[2].split(', ').slice(0, 3).map((x) => `<span>${esc(x)}</span>`).join('') : ''}</p></article>`).join('')
+      moreBtn.hidden = hit.length <= shown
+    }
+    chips.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; kind = b.dataset.k; shown = 24; draw() })
+    q.addEventListener('input', () => { shown = 24; draw() })
+    brand.addEventListener('change', () => { shown = 24; draw() })
+    moreBtn.addEventListener('click', () => { shown += 24; draw() })
+    renders.push(draw)
+    fetch('assets/katalog.json').then((r) => r.json()).then((d) => {
+      rows = d.baris
+      const names = [...new Set(rows.map((r) => r[0]))].filter(Boolean).sort((a, b) => a.localeCompare(b))
+      brand.insertAdjacentHTML('beforeend', names.map((n) => `<option>${esc(n)}</option>`).join(''))
+      draw()
+    }).catch(() => { count.textContent = t('Katalog belum bisa dimuat. Muat ulang halaman ini.', 'The catalogue could not load. Reload this page.') })
+  }
+
   // ---- quiet arrival of sections ----
   const reveal = new IntersectionObserver((es) => { for (const x of es) if (x.isIntersecting) { x.target.classList.add('in'); reveal.unobserve(x.target) } }, { rootMargin: '0px 0px -10% 0px' })
   for (const el of $$('.reveal')) reveal.observe(el)

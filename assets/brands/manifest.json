@@ -1,0 +1,254 @@
+{
+  "kong": {
+    "file": "kong.png",
+    "width": 400,
+    "height": 429,
+    "ground": "any",
+    "source": "https://www.kong.it/images/logo.png",
+    "note": "Header logo of kong.it; trademark of KONG S.p.A., used for identification only.",
+    "group": "keselamatan"
+  },
+  "edelrid": {
+    "file": "edelrid.svg",
+    "width": 141.14,
+    "height": 37.5,
+    "ground": "light",
+    "source": "https://edelrid.com/bundles/rrooaarredelridtheme/images/logo-edelrid.svg",
+    "note": "Header logo of edelrid.com; trademark of EDELRID GmbH & Co. KG, used for identification only.",
+    "group": "keselamatan"
+  },
+  "beal": {
+    "file": "beal.svg",
+    "width": 135,
+    "height": 129,
+    "ground": "dark",
+    "source": "https://www.beal-planet.com/cdn/shop/files/logo-default.svg",
+    "note": "Header logo of beal-planet.com (white version, the only one the site serves); trademark of Beal, used for identification only.",
+    "group": "keselamatan"
+  },
+  "climbing-technology": {
+    "file": "climbing-technology.png",
+    "width": 509,
+    "height": 410,
+    "ground": "light",
+    "source": "https://www.climbingtechnology.com/wp-content/themes/CT2024/Assets/CT-LOGO_black-version.png",
+    "note": "Header logo of climbingtechnology.com; trademark of Aludesign S.p.A., used for identification only.",
+    "group": "keselamatan"
+  },
+  "petzl": {
+    "file": "petzl.png",
+    "width": 329,
+    "height": 163,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:Logo_petzl.png",
+    "note": "Wikimedia Commons, public-domain text logo (simple shapes and text); trademark of Petzl.",
+    "group": "keselamatan"
+  },
+  "cmc": {
+    "file": "cmc.svg",
+    "width": 326.38,
+    "height": 68.9,
+    "ground": "light",
+    "source": "https://cmcpro.com/media/logo/stores/1/cmc-horizontal-lockup.svg",
+    "note": "Header logo of cmcpro.com; trademark of CMC Rescue, Inc., used for identification only.",
+    "group": "keselamatan"
+  },
+  "dmm": {
+    "file": "dmm.svg",
+    "width": 100,
+    "height": 45.69,
+    "ground": "light",
+    "source": "https://dmmwales.com/cdn/shop/files/DMM-Red-Logo-RTM.svg",
+    "note": "Header logo of dmmwales.com; registered trademark of DMM International Ltd, used for identification only.",
+    "group": "keselamatan"
+  },
+  "black-diamond": {
+    "file": "black-diamond.svg",
+    "width": 287,
+    "height": 48,
+    "ground": "dark",
+    "source": "https://blackdiamondequipment.com/cdn/shop/files/logowhite.svg",
+    "note": "Header logo of blackdiamondequipment.com (white version); trademark of Black Diamond Equipment, Ltd., used for identification only.",
+    "group": "keselamatan"
+  },
+  "rock-exotica": {
+    "file": "rock-exotica.png",
+    "width": 235,
+    "height": 94,
+    "ground": "dark",
+    "source": "https://www.rockexotica.com/cdn/shop/files/logo.svg",
+    "note": "Header logo of rockexotica.com (white, with tagline; PNG taken unchanged from inside the site's SVG wrapper); trademark of Rock Exotica LLC, used for identification only.",
+    "group": "keselamatan"
+  },
+  "teufelberger": {
+    "file": "teufelberger.svg",
+    "width": 142,
+    "height": 30,
+    "ground": "light",
+    "source": "https://www.teufelberger.com/en",
+    "note": "Inline header logo of teufelberger.com; trademark of Teufelberger Holding AG, used for identification only.",
+    "group": "keselamatan"
+  },
+  "kask": {
+    "file": "kask.svg",
+    "width": 95,
+    "height": 26,
+    "ground": "light",
+    "source": "https://www.kask.com/en-it/home",
+    "note": "Header logo of kask.com (symbol logo-kask in the site's SVG sprite, lime green as served); trademark of KASK S.p.A., used for identification only.",
+    "group": "keselamatan"
+  },
+  "skedco": {
+    "file": "skedco.png",
+    "width": 97,
+    "height": 77,
+    "ground": "light",
+    "source": "https://skedco.com/wp-content/uploads/2017/02/skedco-logo.png",
+    "note": "Header logo of skedco.com (only 97 px wide on the site); trademark of Skedco, Inc., used for identification only.",
+    "group": "keselamatan"
+  },
+  "servvo": {
+    "file": "servvo.png",
+    "width": 200,
+    "height": 52,
+    "ground": "light",
+    "source": "https://www.servvo.co.id/asset/img/servvo/logo/navbar/logo-servvo-navbar.png",
+    "note": "Navbar logo of servvo.co.id (with tagline); trademark of PT Servvo Fire Indonesia, used for identification only.",
+    "group": "keselamatan"
+  },
+  "lenovo": {
+    "file": "lenovo.svg",
+    "width": 1000,
+    "height": 333.34,
+    "ground": "any",
+    "source": "https://commons.wikimedia.org/wiki/File:Lenovo_(2015).svg",
+    "note": "Wikimedia Commons, tagged public domain as a text logo (PD-textlogo); white wordmark on Lenovo's own red box; trademark of Lenovo, used for identification only.",
+    "group": "kantor"
+  },
+  "dell": {
+    "file": "dell.svg",
+    "width": 72,
+    "height": 72,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:Dell_logo_2016.svg",
+    "note": "Wikimedia Commons, tagged public domain as a text logo (simple shapes and text, PD-textlogo); trademark of Dell Inc., used for identification only.",
+    "group": "kantor"
+  },
+  "hp": {
+    "file": "hp.svg",
+    "width": 1014,
+    "height": 1012,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:HP_logo_2025.svg",
+    "note": "Wikimedia Commons, tagged public domain as a text logo (PD-textlogo); the file English Wikipedia shows as HP's current logo; trademark of HP Inc., used for identification only.",
+    "group": "kantor"
+  },
+  "apple": {
+    "file": "apple.svg",
+    "width": 814,
+    "height": 1000,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:Apple_logo_black.svg",
+    "note": "Wikimedia Commons, tagged public domain in the United States (PD-US-no notice); black version; trademark of Apple Inc., used for identification only.",
+    "group": "kantor"
+  },
+  "samsung": {
+    "file": "samsung.svg",
+    "width": 84,
+    "height": 12.87,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:Samsung_Black_icon.svg",
+    "note": "Wikimedia Commons, tagged PD-textlogo and Trademarked; black wordmark as shown in the Samsung Electronics article; trademark of Samsung, used for identification only.",
+    "group": "kantor"
+  },
+  "asus": {
+    "file": "asus.svg",
+    "width": 501,
+    "height": 107,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:ASUS_Logo.svg",
+    "note": "Wikimedia Commons, tagged public domain as a text logo (simple shapes and text, PD-textlogo); trademark of ASUSTeK Computer Inc., used for identification only.",
+    "group": "kantor"
+  },
+  "acer": {
+    "file": "acer.svg",
+    "width": 4151.1,
+    "height": 1000,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:Acer_2011.svg",
+    "note": "Wikimedia Commons, tagged public domain as a text logo (simple shapes and text, PD-textlogo); trademark of Acer Inc., used for identification only.",
+    "group": "kantor"
+  },
+  "epson": {
+    "file": "epson.svg",
+    "width": 300,
+    "height": 73.75,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:Epson_logo.svg",
+    "note": "Wikimedia Commons, tagged public domain as a text logo (simple shapes and text, PD-textlogo); trademark of Seiko Epson Corporation, used for identification only.",
+    "group": "kantor"
+  },
+  "canon": {
+    "file": "canon.svg",
+    "width": 1000.04,
+    "height": 209.15,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:Canon_wordmark.svg",
+    "note": "Wikimedia Commons, tagged public domain as a text logo (simple shapes and text, PD-textlogo); trademark of Canon Inc., used for identification only.",
+    "group": "kantor"
+  },
+  "brother": {
+    "file": "brother.svg",
+    "width": 254.4,
+    "height": 61.44,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:Brother_logo.svg",
+    "note": "Wikimedia Commons, tagged public domain as a text logo (simple shapes and text, PD-textlogo); trademark of Brother Industries, Ltd., used for identification only.",
+    "group": "kantor"
+  },
+  "logitech": {
+    "file": "logitech.svg",
+    "width": 1000,
+    "height": 304.26,
+    "ground": "light",
+    "source": "https://commons.wikimedia.org/wiki/File:Logitech_logo.svg",
+    "note": "Wikimedia Commons, tagged public domain as a text logo (simple shapes and text, PD-textlogo); trademark of Logitech, used for identification only.",
+    "group": "kantor"
+  },
+  "ikea": {
+    "file": "ikea.svg",
+    "width": 100,
+    "height": 40,
+    "ground": "any",
+    "source": "https://commons.wikimedia.org/wiki/File:Ikea_logo.svg",
+    "note": "Wikimedia Commons, tagged ineligible for copyright (simple shapes and text); logo carries its own blue and yellow background; trademark of Inter IKEA Systems B.V., used for identification only.",
+    "group": "kantor"
+  },
+  "informa": {
+    "file": "informa.svg",
+    "width": 160,
+    "height": 54,
+    "ground": "light",
+    "source": "https://informa.co.id/",
+    "note": "Inline header logo of informa.co.id; trademark of PT Home Center Indonesia (Kawan Lama Group), used for identification only.",
+    "group": "kantor"
+  },
+  "chitose": {
+    "file": "chitose.png",
+    "width": 600,
+    "height": 184,
+    "ground": "light",
+    "source": "https://www.chitose-indonesia.com/wp-content/uploads/2025/11/Logo-Chitose_HR-e1765168340544.png",
+    "note": "Header logo of chitose-indonesia.com (with tagline), scaled down from 1080 px; trademark of PT Chitose Internasional Tbk, used for identification only.",
+    "group": "kantor"
+  },
+  "peguet": {
+    "file": "peguet.png",
+    "width": 84,
+    "height": 41,
+    "ground": "any",
+    "source": "https://www.peguet.com/img/com/logo-peguet.gif",
+    "note": "Header logo of peguet.com (the site serves only this 84 px GIF with a white background; converted to PNG unchanged); trademark of Peguet & Cie (Maillon Rapide), used for identification only.",
+    "group": "keselamatan"
+  }
+}

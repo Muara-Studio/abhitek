@@ -12,6 +12,7 @@
 <meta property="og:image" content="assets/produk/tag-krb-hero.webp">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
 <script>try{var t=localStorage.getItem('abhitek.profil.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -49,6 +50,21 @@
     </div>
   </div>
 </section>
+
+<section class="finderwrap">
+  <div class="wrap">
+    <div class="finder reveal" data-finder>
+      <div class="bar">
+        <label><svg width="20" height="20" aria-hidden="true"><use href="assets/icons.svg#search"/></svg><span class="sr" data-en="Search a model or a brand">Cari model atau merek</span><input id="fq" type="search" autocomplete="off" placeholder="Cari model atau merek" data-en-placeholder="Search a model or a brand"></label>
+        <select id="fb" aria-label="Merek" data-en-aria-label="Brand"><option value="" data-en="All brands">Semua merek</option></select>
+      </div>
+      <p class="chiprow" id="ft" role="group" aria-label="Jenis alat" data-en-aria-label="Equipment type"></p>
+      <p class="count" id="fc" aria-live="polite"></p>
+      <div class="modelgrid" id="fr"></div>
+      <button class="btn btn-plain morebtn" type="button" id="fm" hidden><span data-en="Show more">Tampilkan lagi</span></button>
+    </div>
+  </div>
+</section>
 <section id="katalog">
   <div class="wrap">
     <div class="head reveal">
@@ -73,9 +89,17 @@
         </div>
       </div>
     </div>
-    <p class="kicker reveal" style="margin-top:28px" data-en="Models per brand, on 19 November 2026">Model per merek, per 19 November 2026</p>
-    <ul class="brandgrid reveal"><li><span>Skylotec</span><b>845</b></li><li><span>Kong</span><b>306</b></li><li><span>Edelrid</span><b>272</b></li><li><span>Beal</span><b>238</b></li><li><span>Climbing Technology</span><b>197</b></li><li><span>Petzl</span><b>169</b></li><li><span>CMC</span><b>168</b></li><li><span>Rothoblaas</span><b>165</b></li><li><span>DMM</span><b>138</b></li><li><span>Black Diamond</span><b>138</b></li><li><span>Rock Exotica</span><b>76</b></li><li><span>Teufelberger</span><b>69</b></li><li><span>Harken</span><b>10</b></li><li><span>Kask</span><b>2</b></li><li><span>Skedco</span><b>2</b></li><li><span>Servvo</span><b>1</b></li><li><span>Peguet</span><b>1</b></li></ul>
-    <p class="note reveal" data-en="Brand names belong to their owners. ABHITEK is not affiliated with these brands.">Nama merek adalah milik pemiliknya masing-masing. ABHITEK tidak berafiliasi dengan merek tersebut.</p>
+
+    <div class="railhead reveal">
+      <p class="kicker" data-en="Brands in the catalogue. Point at a logo to see how many of its models are recorded.">Merek di katalog. Arahkan ke logo untuk melihat berapa modelnya yang sudah tercatat.</p>
+      <button class="railpause" type="button" aria-pressed="false" aria-label="Jeda gerak daftar merek" data-en-aria-label="Pause the brand list"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#player-pause"/></svg><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#player-play"/></svg></button>
+    </div>
+    <div class="reveal">
+      <div class="rail" data-rail id="rail-cat">
+        <ul class="railtrack"><li tabindex="0"><span class="logo text">Skylotec</span><span class="cell"><b>845</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/kong.png" alt="Kong" loading="lazy" width="400" height="429"></span><span class="cell"><b>306</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/edelrid.svg" alt="Edelrid" loading="lazy" width="141.14" height="37.5"></span><span class="cell"><b>272</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo on-dark"><img src="assets/brands/beal.svg" alt="Beal" loading="lazy" width="135" height="129"></span><span class="cell"><b>238</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/climbing-technology.png" alt="Climbing Technology" loading="lazy" width="509" height="410"></span><span class="cell"><b>197</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/petzl.png" alt="Petzl" loading="lazy" width="329" height="163"></span><span class="cell"><b>169</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/cmc.svg" alt="CMC" loading="lazy" width="326.38" height="68.9"></span><span class="cell"><b>168</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo text">Rothoblaas</span><span class="cell"><b>165</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/dmm.svg" alt="DMM" loading="lazy" width="100" height="45.69"></span><span class="cell"><b>138</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo on-dark"><img src="assets/brands/black-diamond.svg" alt="Black Diamond" loading="lazy" width="287" height="48"></span><span class="cell"><b>138</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo on-dark"><img src="assets/brands/rock-exotica.png" alt="Rock Exotica" loading="lazy" width="235" height="94"></span><span class="cell"><b>76</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/teufelberger.svg" alt="Teufelberger" loading="lazy" width="142" height="30"></span><span class="cell"><b>69</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo text">Harken</span><span class="cell"><b>10</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/kask.svg" alt="Kask" loading="lazy" width="95" height="26"></span><span class="cell"><b>2</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/skedco.png" alt="Skedco" loading="lazy" width="97" height="77"></span><span class="cell"><b>2</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/servvo.png" alt="Servvo" loading="lazy" width="200" height="52"></span><span class="cell"><b>1</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li><li tabindex="0"><span class="logo"><img src="assets/brands/peguet.png" alt="Peguet" loading="lazy" width="84" height="41"></span><span class="cell"><b>1</b><span data-en="models recorded">model tercatat</span><small data-en="and the number keeps growing">dan terus bertambah</small></span></li></ul>
+      </div></div>
+    <p class="note reveal" data-en="Brand names and logos belong to their owners. They show which makers' models are in the catalogue; ABHITEK is not affiliated with these brands.">Nama dan logo merek adalah milik pemiliknya masing-masing. Logo ini menunjukkan model pabrikan mana yang ada di katalog; ABHITEK tidak berafiliasi dengan merek tersebut.</p>
+
   </div>
 </section>
 
