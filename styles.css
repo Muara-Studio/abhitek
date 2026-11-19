@@ -459,6 +459,32 @@ section:has(+ .extra) { padding-bottom: 16px; }
 .pack img { object-position: left center; }
 .more .link { align-items: baseline; }
 
+/* ---------- Round 6 (20 Nov): defects from the fifth critique ---------- */
+:root, [data-theme='light'] .invert { --word-end: 52%; }
+[data-theme='light'], :root:not([data-theme='light']) .invert, .paper { --word-end: 80%; }
+.wordmark { background: linear-gradient(180deg, var(--ink) 34%, color-mix(in srgb, var(--ink) var(--word-end), transparent) 100%); -webkit-background-clip: text; background-clip: text; }
+.hs-code { white-space: nowrap; }
+.pagebox { grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px; overflow: hidden; }
+.pagetext { display: grid; gap: 22px; align-content: end; }
+.aside { justify-self: end; align-self: end; margin: 0; }
+.aside-fig { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-end; gap: 10px; max-width: 420px; }
+.aside-fig b { font-size: clamp(44px, 6.4vw, 92px); font-weight: 700; letter-spacing: -0.03em; line-height: 0.95; }
+.aside-fig .unit { margin-inline-end: 12px; font-size: 13px; }
+.aside-uid { display: grid; justify-items: end; gap: 8px; padding: 20px 24px; border-radius: 20px; background: color-mix(in srgb, var(--bg) 60%, transparent); box-shadow: inset 0 0 0 1px var(--hair); }
+.aside-uid b { font-size: clamp(16px, 1.9vw, 24px); letter-spacing: 0.02em; }
+.aside-uid span { color: var(--grey); font-size: 13px; }
+.aside-cut { width: clamp(220px, 30vw, 400px); height: auto; margin-bottom: calc(clamp(22px, 3.4vw, 48px) * -1.6); filter: drop-shadow(0 24px 34px rgb(0 0 0 / 0.4)); }
+.aside-kit { width: clamp(180px, 22vw, 290px); height: auto; border-radius: 22px; margin-bottom: calc(clamp(22px, 3.4vw, 48px) * -1.4); }
+.aside-phone { width: clamp(150px, 16vw, 210px); padding: 7px 7px 0; border-radius: 30px 30px 0 0; background: #0E0E10; box-shadow: inset 0 0 0 1.5px rgb(255 255 255 / 0.24); margin-bottom: calc(clamp(22px, 3.4vw, 48px) * -1); max-height: 300px; overflow: hidden; }
+.aside-phone img { border-radius: 23px 23px 0 0; width: 100%; }
+[data-theme='light'] .paper { background: var(--tintbg); }
+.pack img { border-radius: 24px; }
+.pack .note { color: var(--grey); }
+.extra .head { margin-top: clamp(48px, 6vw, 72px); }
+.art-chip img { transform: scale(1.9); transform-origin: 27% 35%; }
+.card:not(.big) .art { min-height: 168px; }
+.nav a { padding: 10px 12px; }
+
 /* Buttons (20 Nov): pills. The main one carries its arrow in a dark disc that leans out on hover. */
 .btn { min-height: 52px; padding: 0 24px; border-radius: 999px; font-size: 15px; }
 .btn-gold:has(.arr) { padding-inline-end: 8px; gap: 14px; }
@@ -508,6 +534,11 @@ section:has(+ .extra) { padding-bottom: 16px; }
   .top .brand { font-size: 15px; gap: 8px; }
   .lang button { min-width: 36px; }
   .hero, .pagehead { padding-top: 84px; }
+  .herobox { padding-top: 31vw; }
+  .herobox .hphone { width: 36%; bottom: -8%; }
+  .pagebox { grid-template-columns: minmax(0, 1fr); }
+  .aside { justify-self: start; }
+  .aside-cut, .aside-kit, .aside-phone { display: none; }
   .herobox .cta .btn { flex: 1 1 100%; }
   .card:not(.big) { grid-template-columns: minmax(0, 1fr); }
   .card:not(.big) .art { grid-row: auto; min-height: 150px; }
