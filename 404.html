@@ -1,8 +1,18 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><title>ABHITEK</title>
-<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
-<script>(function(l){var roots=["/abhitek/lapangan/","/abhitek/"];for(var i=0;i<roots.length;i++){var r=roots[i];
-if(l.pathname.indexOf(r)===0&&l.pathname!==r){var rest=l.pathname.slice(r.length).replace(/&/g,'~and~');
-l.replace(r+'?/'+rest+(l.search?'&'+l.search.slice(1).replace(/&/g,'~and~'):'')+l.hash);return}}
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Halaman tidak ditemukan · ABHITEK</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<script>(function(l){var site="/abhitek/",app="/abhitek/app/",roots=["/abhitek/app/lapangan/","/abhitek/app/"],old=["asisten-ai","atur-sandi","audit","audit-penugasan","backup","bagikan","barang","custody","daftar","diagnostik","finansial","harga","inspeksi","katalog","kelola","kiriman","konsol","laporan","laporan-kerusakan","login","lokasi","lupa-sandi","masukan","n","notifikasi","onboarding","panduan-pasang","pengaturan","pengaturan-aset","pengguna","perangkat-gps","perawatan","perlu-perhatian","persetujuan","peta","pilih-akun","prosedur-peralihan","provisioning","proyek","recycle-bin","scan","setup-pribadi","shop","tanya-jawab","tentang","undangan","untuk-it"],p=l.pathname,moved=false;
+if(p.indexOf(site)===0&&p.indexOf(app)!==0){var seg=p.slice(site.length).split('/')[0];
+if(seg==='lapangan'||old.indexOf(seg)>=0){p=app+p.slice(site.length);if(p+'/'===roots[0])p+='/';moved=true}}
+for(var i=0;i<roots.length;i++){var r=roots[i];if(p.indexOf(r)!==0)continue;
+var rest=p.slice(r.length).replace(/&/g,'~and~');
+if(rest){l.replace(r+'?/'+rest+(l.search?'&'+l.search.slice(1).replace(/&/g,'~and~'):'')+l.hash);return}
+if(moved){l.replace(r+l.search+l.hash);return}
+break}
 document.addEventListener('DOMContentLoaded',function(){document.getElementById('m').hidden=false})})(window.location)</script>
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0B0B0C;color:#ECECEF;font:15px/1.5 system-ui,sans-serif}a{color:#F7C531}</style>
-</head><body><p id="m" hidden>Halaman tidak ditemukan. <a href="/abhitek/">Buka ABHITEK</a></p></body></html>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0B0B0C;color:#ECECEF;font:15px/1.6 system-ui,sans-serif}
+main{max-width:30rem;padding:24px}h1{margin:0 0 8px;font-size:22px;line-height:1.3}p{margin:0 0 8px}.en{color:#A1A1AA}a{color:#F7C531}</style>
+<noscript><style>#m[hidden]{display:block}</style></noscript>
+</head><body><main id="m" hidden><h1>Halaman tidak ditemukan</h1>
+<p>Alamat ini tidak ada di situs ABHITEK.</p>
+<p class="en" lang="en">Page not found. This address is not on the ABHITEK site.</p>
+<p><a href="/abhitek/">Buka halaman utama ABHITEK</a></p></main></body></html>

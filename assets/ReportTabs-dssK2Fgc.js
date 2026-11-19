@@ -1,1 +1,0 @@
-import{h as e,jt as t}from"./useButton-Bt7oTcUw.js";import{t as n}from"./sections-DjJe6QAq.js";import{t as r}from"./SectionTabs-I4mFp5w2.js";import{t as i}from"./strings-BfNuQL_W.js";var a=t();function o(){let t=e(i);return(0,a.jsx)(r,{label:t.title,tabs:n(`laporan`)})}export{o as t};

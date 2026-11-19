@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+<head>
+<meta name="robots" content="noindex, nofollow" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-en="Main catalogue · ABHITEK">Katalog utama · ABHITEK</title>
+<meta name="description" content="ABHITEK memasang chip NFC yang dikunci ke tiap alat keselamatan, lalu mencatat pemegang, inspeksi, dan kelayakannya." data-en-content="ABHITEK fits an NFC chip locked to each piece of safety equipment, then records who holds it, its inspections and whether it is fit for use.">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:title" content="Katalog utama · ABHITEK">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/produk/tag-krb-hero.webp">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{var t=localStorage.getItem('abhitek.profil.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="">
+
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="index.html" aria-label="ABHITEK"><img src="assets/logo.svg" alt="" width="28" height="28">ABHITEK</a>
+      <nav class="nav" aria-label="Halaman" data-en-aria-label="Pages"><a href="kenapa-chip.html" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" aria-current="page" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips">Chip</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing">Harga</a></nav>
+      <details class="menu">
+        <summary aria-label="Menu"><svg width="20" height="20" aria-hidden="true"><use href="assets/icons.svg#menu-2"/></svg></summary>
+        <nav aria-label="Halaman" data-en-aria-label="Pages"><a href="kenapa-chip.html" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" aria-current="page" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips">Chip</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing">Harga</a><a href="pilot.html" data-en="Pilot Pack">Paket Pilot</a></nav>
+      </details>
+      <button class="theme" type="button" aria-label="Ganti tampilan terang atau gelap" data-en-aria-label="Switch between light and dark"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#sun"/></svg><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#moon"/></svg></button>
+      <div class="lang" role="group" aria-label="Bahasa" data-en-aria-label="Language">
+        <button type="button" data-lang="id" aria-pressed="true">ID</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-gold small" href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span data-en="Try the demo">Coba demo</span><span class="arr"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></span></a>
+    </div>
+  </div>
+</header>
+
+<main id="atas">
+
+<section class="pagehead">
+  <div class="wrap">
+    <div class="pagebox tex">
+      <h1 data-en="Catalogue">Katalog</h1>
+      <p class="lead" data-en="2,797 models from 17 brands, ready to pick when you register a tool.">2.797 model dari 17 merek, siap dipilih saat Anda mendaftarkan alat.</p>
+    </div>
+  </div>
+</section>
+<section id="katalog">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 data-en="The main catalogue fills the spec for you.">Katalog utama mengisi spesifikasinya untuk Anda.</h2>
+      <p class="lead" data-en="We collected 2,797 models from the public pages of 17 makers; 637 are already marked for rope access. Pick a type and a model, and the brand, model and standard go into the form. A model that is missing can be added by you.">Kami mengumpulkan 2.797 model dari halaman publik 17 pabrikan; 637 sudah ditandai untuk rope access. Pilih jenis dan modelnya, lalu merek, model, dan standar masuk ke formulir. Model yang belum ada bisa Anda tambahkan sendiri.</p>
+    </div>
+    <div class="panel reveal">
+      <div class="body cat">
+        <div>
+          <p class="kicker" data-en="1. Pick a type and a model">1. Pilih jenis dan model</p>
+          <div class="types" id="cat-types" role="group" aria-label="Jenis alat" data-en-aria-label="Equipment type"></div>
+          <div class="models" id="cat-models"></div>
+          <p class="manual" data-en="Not in the catalogue? Enter it by hand, and it stays in the catalogue of your organisation.">Tidak ada di katalog? Isi manual, lalu model itu tersimpan di katalog organisasi Anda.</p>
+        </div>
+        <div class="form" aria-live="polite">
+          <p class="kicker" data-en="2. The form is filled">2. Formulir terisi</p>
+          <div class="field"><label data-en="Brand">Merek</label><output id="f-brand"></output></div>
+          <div class="field"><label>Model</label><output id="f-model"></output></div>
+          <div class="field"><label data-en="Standard (a suggestion)">Standar (saran)</label><output id="f-std"></output></div>
+          <div class="field"><label data-en="Item code">Kode barang</label><output id="f-code"></output></div>
+          <p class="note" data-en="Every field stays editable. The standard is the one for this type of equipment; check it against the label on your unit.">Semua kolom tetap bisa diubah. Standar adalah standar untuk jenis alat itu; cocokkan dengan label pada unit Anda.</p>
+        </div>
+      </div>
+    </div>
+    <p class="kicker reveal" style="margin-top:28px" data-en="Models per brand, on 19 November 2026">Model per merek, per 19 November 2026</p>
+    <ul class="brandgrid reveal"><li><span>Skylotec</span><b>845</b></li><li><span>Kong</span><b>306</b></li><li><span>Edelrid</span><b>272</b></li><li><span>Beal</span><b>238</b></li><li><span>Climbing Technology</span><b>197</b></li><li><span>Petzl</span><b>169</b></li><li><span>CMC</span><b>168</b></li><li><span>Rothoblaas</span><b>165</b></li><li><span>DMM</span><b>138</b></li><li><span>Black Diamond</span><b>138</b></li><li><span>Rock Exotica</span><b>76</b></li><li><span>Teufelberger</span><b>69</b></li><li><span>Harken</span><b>10</b></li><li><span>Kask</span><b>2</b></li><li><span>Skedco</span><b>2</b></li><li><span>Servvo</span><b>1</b></li><li><span>Peguet</span><b>1</b></li></ul>
+    <p class="note reveal" data-en="Brand names belong to their owners. ABHITEK is not affiliated with these brands.">Nama merek adalah milik pemiliknya masing-masing. ABHITEK tidak berafiliasi dengan merek tersebut.</p>
+  </div>
+</section>
+
+
+<section class="extra">
+  <div class="wrap">
+    <div class="two reveal">
+      <div class="panel"><div class="label"><span data-en="Where the data comes from">Asal datanya</span></div><div class="body"><dl class="rows">
+        <div><dt data-en="Source">Sumber</dt><dd data-en="Public pages of the makers' own sites">Halaman publik situs pabrikan</dd></div>
+        <div><dt data-en="What is kept">Yang disimpan</dt><dd data-en="The description as text and a link to the picture">Teks deskripsi dan tautan ke gambarnya</dd></div>
+        <div><dt data-en="Standard">Standar</dt><dd data-en="The one for that type of equipment">Standar untuk jenis alat itu</dd></div>
+      </dl><p class="note" style="margin-top:12px" data-en="A catalogue match says the model is recorded. It does not say that your unit passed a test or is a factory original.">Kecocokan dengan katalog berarti modelnya tercatat. Itu bukan pernyataan bahwa unit Anda lulus uji atau asli dari pabrik.</p></div></div>
+      <div class="panel"><div class="label"><span data-en="When a model is missing">Kalau modelnya belum ada</span></div><div class="body"><dl class="rows">
+        <div><dt data-en="Enter it by hand">Isi manual</dt><dd data-en="Every field can be typed">Semua kolom bisa diketik</dd></div>
+        <div><dt data-en="Your own catalogue">Katalog organisasi</dt><dd data-en="The model stays for the next item">Model tersimpan untuk barang berikutnya</dd></div>
+        <div><dt data-en="The main catalogue">Katalog utama</dt><dd data-en="Read-only for organisations">Hanya-baca bagi organisasi</dd></div>
+      </dl></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="bandbox tex reveal">
+      <div>
+        <h2 data-en="Try the demo with sample data.">Coba demonya dengan data contoh.</h2>
+        <p class="lead" data-en="The demo runs in your browser and needs no sign-up. When it fits, start with a Pilot Pack: chips and a reader for your first 50 tools, Rp1,750,000.">Demo berjalan di browser Anda dan tidak perlu mendaftar. Kalau cocok, mulai dengan Paket Pilot: chip dan reader untuk 50 alat pertama, Rp1.750.000.</p>
+      </div>
+      <div class="cta">
+        <a class="btn btn-gold " href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span data-en="Try the demo">Coba demo</span><span class="arr"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></span></a>
+        <a class="btn btn-plain" href="pilot.html"><span data-en="Request a Pilot Pack">Minta Paket Pilot</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="24" height="24">ABHITEK</a>
+    <nav aria-label="Tautan" data-en-aria-label="Links"><a href="kenapa-chip.html" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" aria-current="page" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips">Chip</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing">Harga</a><a href="pilot.html" data-en="Pilot Pack">Paket Pilot</a><a href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener">Demo</a></nav>
+    <span>© 2026 ABHITEK</span>
+  </div>
+</footer>
+<a class="sticky" href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span><b data-en="Try the demo">Coba demo</b> <span data-en="in your browser, no sign-up">di browser, tanpa daftar</span></span><span class="go"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></span></a>
+
+<script src="app.js" defer></script>
+</body>
+</html>

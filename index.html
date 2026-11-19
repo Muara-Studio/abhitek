@@ -1,95 +1,241 @@
 <!doctype html>
-<html lang="id" class="dark">
-  <head>
-    <meta name="robots" content="noindex, nofollow" />
-    <script>(function(l){if(l.search.charAt(1)==='/'){var p=l.search.slice(1).split('&').map(function(s){return s.replace(/~and~/g,'&')}).join('?');
-history.replaceState(null,'',l.pathname.slice(0,-1)+p+l.hash)}})(window.location)</script>
+<html lang="id" data-theme="dark">
+<head>
+<meta name="robots" content="noindex, nofollow" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-en="ABHITEK: safety equipment with a digital identity">ABHITEK: alat keselamatan dengan identitas digital</title>
+<meta name="description" content="ABHITEK memasang chip NFC yang dikunci ke tiap alat keselamatan, lalu mencatat pemegang, inspeksi, dan kelayakannya." data-en-content="ABHITEK fits an NFC chip locked to each piece of safety equipment, then records who holds it, its inspections and whether it is fit for use.">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:title" content="ABHITEK: alat keselamatan dengan identitas digital">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/produk/tag-krb-hero.webp">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{var t=localStorage.getItem('abhitek.profil.theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="home">
 
-    <meta charset="UTF-8" />
-    <meta name="theme-color" content="#0B0B0C" />
-    <meta name="description" content="ABHITEK — pelacak riwayat hidup alat keselamatan dengan chip NFC." />
-    <link rel="icon" type="image/svg+xml" href="/abhitek/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ABHITEK</title>
-    <script type="module" crossorigin src="/abhitek/assets/index-2732fL2W.js"></script>
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/rolldown-runtime-CbXtAM7H.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/preload-helper-CCcv-JvP.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/useButton-Bt7oTcUw.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/strings-CDZSPP6h.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/removable-jCxpXK0F.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/useQuery-CZxEEVZq.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/dist-Czmr2_WE.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/mutation-DNE0ckdm.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/useNavigate-BOE41jsk.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/useRouterState-B2cEeltl.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconAlertOctagon-cAIqqX4I.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconAlertTriangle-DgfjUV1R.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconCircleCheck-hXLatDYZ.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconInfoCircle-iowXqFZU.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/sonner-C_H9uASf.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/useParams-DqzFVs4J.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/useSearch-BLt-GWh2.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/useBaseUiId-Bvc4tAl5.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconChevronRight-DbQrkuIv.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/useScrollLock-C4Wfovic.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/useValueChanged-D__mMCvR.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/getPseudoElementBounds-DUrne0Cb.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconTag-Cmp0Z0To.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconMessage-BFl9wpWX.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconNfc-BCPzHC6R.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconServer-kS6TPz1H.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconShieldCheck-BQ0JynSI.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconTruckDelivery-C4T71PzV.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconUsers-ChZrQnlE.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/nav-BlfnXDhB.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconArrowRight-DL1Wro5g.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconBell-xy9uZDTC.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconCheck-kiBdfnFA.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconDownload-V-E7QVab.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconExternalLink-C9TrutHT.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconLoader2-DiqOUGLB.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/ShellContext-mROF6CDC.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconPackage-CDPRAAxA.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconPlus-Dqvpua-M.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconSearch-Dn5faW0U.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconSend-BOfMVXiW.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconX-xKe_7Cep.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/button-CSH4KsZO.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/strings-CcISa4O3.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/portal-BK1u2tmZ.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/errors-DCP-Ob7V.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/Field-oi-ZdFMO.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/Modal-BR6DXpW1.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/session-BjOS4a9_.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/data-PbEiVbWW.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/format-BL1Fje8D.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/PageHeader-DN4LZv0h.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconCompass-JIOeuiZM.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconHelpCircle-C6nPi7xn.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconDeviceMobile-DpsovBXC.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconLock-SReBc12O.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/StateView-B01QYQZS.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconLogout-C7VDIKQJ.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconReceipt-PlZRk9Bh.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconUser-DI1i65n7.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/Logo-BL-6k5f8.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/IconWorld-CnN2qTKn.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/PublicFrame-BxkCBwGA.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/sheet-K6o793HL.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/space-D_mGCkyN.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/protocol-CIqIcqwf.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/bridge-BLUjXluU.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/registry-DgyuVMLR.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/webnfc-B7bwW49R.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/data-CNExdH3w.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/sections-DjJe6QAq.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/tours-BUTBZAkI.js">
-    <link rel="modulepreload" crossorigin href="/abhitek/assets/prefs-D9iQJRn7.js">
-    <link rel="stylesheet" crossorigin href="/abhitek/assets/index-BesSQ9Pn.css">
-  </head>
-  <body>
-    <!-- First paint before JS: same mark and background as the in-app BootSplash, so boot never flashes black. -->
-    <style>.boot{background:#0b0b0c;place-items:center;display:grid;position:fixed;inset:0}.boot img{width:52px;height:52px;animation:1.6s ease-in-out infinite boot}@keyframes boot{50%{opacity:.55;transform:scale(.94)}}@media (prefers-reduced-motion:reduce){.boot img{animation:none}}</style>
-    <div id="root"><div class="boot" role="status" aria-label="Memuat ABHITEK"><img src="/abhitek/favicon.svg" alt="" /></div></div>
-  </body>
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="index.html" aria-label="ABHITEK"><img src="assets/logo.svg" alt="" width="28" height="28">ABHITEK</a>
+      <nav class="nav" aria-label="Halaman" data-en-aria-label="Pages"><a href="kenapa-chip.html" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips">Chip</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing">Harga</a></nav>
+      <details class="menu">
+        <summary aria-label="Menu"><svg width="20" height="20" aria-hidden="true"><use href="assets/icons.svg#menu-2"/></svg></summary>
+        <nav aria-label="Halaman" data-en-aria-label="Pages"><a href="kenapa-chip.html" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips">Chip</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing">Harga</a><a href="pilot.html" data-en="Pilot Pack">Paket Pilot</a></nav>
+      </details>
+      <button class="theme" type="button" aria-label="Ganti tampilan terang atau gelap" data-en-aria-label="Switch between light and dark"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#sun"/></svg><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#moon"/></svg></button>
+      <div class="lang" role="group" aria-label="Bahasa" data-en-aria-label="Language">
+        <button type="button" data-lang="id" aria-pressed="true">ID</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-gold small" href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span data-en="Try the demo">Coba demo</span><span class="arr"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></span></a>
+    </div>
+  </div>
+</header>
+
+<main id="atas">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="herobox tex">
+      <p class="wordmark" aria-hidden="true">ABHITEK</p>
+      <div class="stage" data-open="false">
+        <div class="product" style="--tap-x: 29.5%; --tap-y: 37.1%">
+          <img src="assets/produk/karabiner-cut.webp" width="1357" height="1143" alt="Karabiner baja dengan chip ABHITEK berwarna kuning" data-en-alt="A steel carabiner with a yellow ABHITEK chip" fetchpriority="high">
+          <button class="tap" type="button" aria-expanded="false" aria-controls="rekam-contoh" aria-label="Tempel chip untuk membuka rekam" data-en-aria-label="Tap the chip to open the record"></button>
+          <span class="tap-hint" aria-hidden="true" data-en="Tap here">Tempel di sini</span>
+        </div>
+        <div class="hphone" id="rekam-contoh">
+          <div class="hscreen">
+            <div class="hs-idle">
+              <span class="disc"><svg width="26" height="26" aria-hidden="true"><use href="assets/icons.svg#nfc"/></svg></span>
+              <b data-en="Ready to scan">Siap memindai</b>
+              <span data-en="Hold the phone to the chip">Dekatkan ponsel ke chip</span>
+            </div>
+            <div class="hs-rec">
+              <span class="hs-k" data-en="Item record">Rekam barang</span>
+              <b data-en="Steel screw-lock carabiner">Karabiner baja kunci ulir</b>
+              <span class="hs-code">ORG1-APD-0412</span>
+              <span class="pill ok" data-en="Fit for use">Layak pakai</span>
+              <dl class="rows">
+                <div><dt data-en="Held by">Pemegang</dt><dd>Andi Pratama</dd></div>
+                <div><dt data-en="Last inspection">Inspeksi terakhir</dt><dd data-en="2 Nov 2026, passed">2 Nov 2026, lulus</dd></div>
+                <div><dt data-en="Next inspection">Inspeksi berikutnya</dt><dd data-en="2 Dec 2026">2 Des 2026</dd></div>
+                <div><dt>Chip</dt><dd data-en="Locked">Terkunci</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copy">
+        <h1 data-en="Safety equipment<br>with a digital identity.">Alat keselamatan<br>dengan identitas digital.</h1>
+        <p class="lead" data-en="Know which tool is fit for use, who holds it and when it is due for inspection. ABHITEK locks one NFC chip to each tool: tap your phone on it and its record opens.">Tahu alat mana yang layak pakai, siapa yang memegangnya, dan kapan harus diperiksa. ABHITEK mengunci satu chip NFC ke tiap alat: tempelkan ponsel, rekamnya langsung terbuka.</p>
+        <div class="cta">
+          <a class="btn btn-gold " href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span data-en="Try the demo">Coba demo</span><span class="arr"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></span></a>
+          <a class="btn btn-plain" href="pilot.html"><span data-en="Request a Pilot Pack">Minta Paket Pilot</span></a>
+        </div>
+      </div>
+      <dl class="offerbar">
+        <div><dt data-en="Pilot Pack">Paket Pilot</dt><dd data-en="50 tools · Rp1,750,000">50 alat · Rp1.750.000</dd></div>
+        <div><dt data-en="The app">Aplikasi</dt><dd data-en="100 items · free">100 barang · gratis</dd></div>
+        <div><dt data-en="Main catalogue">Katalog utama</dt><dd data-en="2,797 models · 17 brands">2.797 model · 17 merek</dd></div>
+      </dl>
+    </div>
+    <p class="stage-note" data-en="The record on the phone is a sample, not customer data. The product picture is an illustration.">Rekam di ponsel adalah contoh, bukan data pelanggan. Gambar produk adalah ilustrasi.</p>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="head stack reveal">
+      <h2 data-en="What changes when a tool carries a chip.">Yang berubah saat alat punya chip.</h2>
+    </div>
+    <div class="cards3 reveal">
+      <a class="card big" href="kenapa-chip.html">
+        <div class="art art-chip"><img src="assets/produk/tag-krb.webp" width="800" height="800" loading="lazy" alt=""></div>
+        <h3 data-en="A number nobody can change">Nomor yang tidak bisa diubah</h3>
+        <p data-en="One chip is locked to one tool. Its number cannot be retyped, replaced or moved to another tool.">Satu chip dikunci ke satu alat. Nomornya tidak bisa diketik ulang, diganti, atau dipindah ke alat lain.</p>
+        <span class="go"><span data-en="Why a chip">Kenapa chip</span><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></span>
+      </a>
+      <a class="card" href="kenapa-chip.html#rekam">
+        <div class="art art-line" aria-hidden="true">
+          <ol><li><b data-en="Bought">Dibeli</b><time>3 Mar</time></li><li><b data-en="Chip locked">Chip dikunci</b><time>4 Mar</time></li><li><b data-en="Handed over">Diserahkan</b><time>10 Mar</time></li><li><b data-en="Inspected: passed">Diinspeksi: lulus</b><time>2 Nov</time></li></ol>
+        </div>
+        <h3 data-en="A history that stays in one place">Riwayat yang tidak tercecer</h3>
+        <p data-en="Purchase, handover, inspection and repair all go on one sheet, from the first day to disposal.">Pembelian, serah-terima, inspeksi, dan perbaikan masuk ke satu lembar, dari hari pertama sampai alat dilepas.</p>
+        <span class="go"><span data-en="See the record">Lihat rekamnya</span><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></span>
+      </a>
+      <a class="card" href="katalog.html">
+        <div class="art art-cat" aria-hidden="true">
+          <span>Petzl</span><span>Kong</span><span>Edelrid</span><span>Skylotec</span><span>Beal</span><span>DMM</span><span>CMC</span><span>Kask</span><span data-en="+9 brands">+9 merek</span>
+        </div>
+        <h3 data-en="Register a tool without typing its spec">Mendaftarkan alat tanpa mengetik spesifikasi</h3>
+        <p data-en="Pick the model from 2,797 in the catalogue. The brand, model and standard fill themselves.">Pilih modelnya dari 2.797 model di katalog. Merek, model, dan standar terisi sendiri.</p>
+        <span class="go"><span data-en="Open the catalogue">Buka katalog</span><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="cara">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 data-en="A number on a sticker can be retyped. A chip UID cannot.">Nomor di stiker bisa diketik ulang. UID chip tidak.</h2>
+      <p class="lead" data-en="Anyone can reprint a barcode or a numbered sticker. An ABHITEK chip carries a UID, the unique number of that chip, and it is locked. Try both below.">Barcode dan stiker bernomor bisa dicetak ulang oleh siapa saja. Chip ABHITEK membawa UID, yaitu nomor unik chip itu, dan nomor itu dikunci. Coba keduanya di bawah ini.</p>
+    </div>
+    <div class="duel reveal">
+      <div class="side panel">
+        <div class="stagebox">
+          <div class="sticker">
+            <small data-en="Inventory number">Nomor inventaris</small>
+            <label class="sr" for="sticker-no" data-en="Inventory number on the sticker">Nomor inventaris di stiker</label>
+            <input id="sticker-no" value="APD-0451" maxlength="14" autocomplete="off" spellcheck="false">
+            <div class="barcode" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="body2">
+          <h3 data-en="Numbered sticker">Stiker bernomor</h3>
+          <p class="verdict" id="sticker-say" aria-live="polite"></p>
+          <ul class="facts">
+            <li><span data-en="Can it be copied?">Bisa disalin?</span><b data-en="Yes, with a photocopier">Bisa, dengan mesin fotokopi</b></li>
+            <li><span data-en="Can it be changed after fitting?">Bisa diubah setelah dipasang?</span><b data-en="Yes, by anyone">Bisa, oleh siapa saja</b></li>
+            <li><span data-en="How is it read?">Cara membacanya?</span><b data-en="It must be visible and clean">Harus terlihat dan bersih</b></li>
+          </ul>
+        </div>
+      </div>
+      <div class="side panel">
+        <div class="stagebox">
+          <div class="uid-row">
+            <div class="uid"><svg width="24" height="24" aria-hidden="true"><use href="assets/icons.svg#lock"/></svg><code>04:26:66:6C:83:E5:F8:3E</code></div>
+            <button class="btn btn-plain" type="button" id="uid-try"><span data-en="Try to change it">Coba ubah</span></button>
+          </div>
+        </div>
+        <div class="body2">
+          <h3 data-en="ABHITEK chip">Chip ABHITEK</h3>
+          <p class="verdict" id="uid-say" aria-live="polite"></p>
+          <ul class="facts">
+            <li><span data-en="Can it be copied?">Bisa disalin?</span><b data-en="An imitation is not in the registry and is rejected">Tiruannya tidak ada di registri dan ditolak</b></li>
+            <li><span data-en="Can it be changed after fitting?">Bisa diubah setelah dipasang?</span><b data-en="No. It is locked for good">Tidak. Dikunci permanen</b></li>
+            <li><span data-en="How is it read?">Cara membacanya?</span><b data-en="A tap is enough">Cukup ditempel</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+<p class="more reveal"><a class="link" href="kenapa-chip.html"><span data-en="See also: an imitation chip, and one record per tool">Lihat juga: kalau chipnya tiruan, dan satu rekam per alat</span><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></a></p>
+  </div>
+</section>
+<section id="chip" class="paper">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 data-en="A chip for metal, fabric, rope and helmets.">Chip untuk logam, kain, tali, dan helm.</h2>
+      <p class="lead" data-en="Choose a chip by the surface of the tool. The Pilot Pack holds a mix for your first 50 tools.">Pilih chip menurut permukaan alat. Paket Pilot berisi campurannya untuk 50 alat pertama Anda.</p>
+    </div>
+    <article class="pack reveal">
+      <img src="assets/produk/pkt-pilot-50.webp" width="800" height="800" loading="lazy" alt="Isi Paket Pilot: chip, label, dan reader USB" data-en-alt="The Pilot Pack: chips, labels and a USB reader">
+      <div class="t">
+        <h3 data-en="Pilot Pack">Paket Pilot</h3>
+        <ul class="list">
+          <li><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#check"/></svg><span data-en="25 on-metal stickers">25 stiker anti-logam</span></li>
+          <li><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#check"/></svg><span data-en="15 rope labels">15 label tali</span></li>
+          <li><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#check"/></svg><span data-en="10 carabiner chips">10 chip karabiner</span></li>
+          <li><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#check"/></svg><span data-en="1 USB reader and a fitting guide">1 reader USB dan panduan pasang</span></li>
+        </ul>
+        <p class="price"><b>Rp1.750.000</b></p>
+        <p class="note" data-en="Rp250,000 less than the same items bought one by one (Rp2,000,000).">Rp250.000 lebih hemat daripada membeli isinya satu per satu (Rp2.000.000).</p>
+        <p><a class="btn btn-plain" href="pilot.html"><span data-en="Request a Pilot Pack">Minta Paket Pilot</span><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></a></p>
+      </div>
+    </article>
+<p class="more reveal"><a class="link" href="chip.html"><span data-en="See all chips and readers">Lihat semua chip dan reader</span><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></a></p>
+  </div>
+</section>
+<section id="aplikasi" class="app">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 data-en="A desk in the office, a phone in the field.">Meja kerja di kantor, ponsel di lapangan.</h2>
+      <p class="lead" data-en="The web app is for admins and HSE managers. The phone app is for inspectors and technicians. Without a signal, field notes are kept on the phone first and sent when the connection returns.">Aplikasi web untuk admin dan manajer HSE. Aplikasi ponsel untuk inspektur dan teknisi. Saat tanpa sinyal, catatan lapangan tersimpan dulu di ponsel dan terkirim ketika tersambung lagi.</p>
+    </div>
+    <figure class="reveal" style="margin:0">
+      <div class="tabs" role="tablist" aria-label="Layar aplikasi web" data-en-aria-label="Web app screens">
+        <button type="button" role="tab" aria-selected="true" data-src="assets/app/galeri.webp" data-alt="Daftar barang dalam tampilan galeri" data-alt-en="The item list in gallery view"><span data-en="Item gallery">Galeri barang</span></button>
+        <button type="button" role="tab" aria-selected="false" data-src="assets/app/inspeksi.webp" data-alt="Jadwal inspeksi dengan status jatuh tempo" data-alt-en="Inspection schedules with their due status"><span data-en="Inspection schedule">Jadwal inspeksi</span></button>
+      </div>
+      <div class="screens">
+        <div class="screen"><img id="app-shot" src="assets/app/galeri.webp" width="1520" height="1080" loading="lazy" alt="Daftar barang dalam tampilan galeri"></div>
+        <div class="phone"><img src="assets/app/hp-inspeksi.webp" width="786" height="1600" loading="lazy" alt="Checklist inspeksi harness di aplikasi ponsel" data-en-alt="The inspection checklist of a harness in the phone app"></div>
+      </div>
+      <figcaption class="note"><span data-en="Real screens of the ABHITEK app with sample data: the item gallery on the desk, and the inspection checklist of harness ORG1-APD-0451 on the phone.">Layar asli aplikasi ABHITEK dengan data contoh: galeri barang di meja kerja, dan checklist inspeksi harness ORG1-APD-0451 di ponsel.</span> <a class="link" href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span data-en="Open the demo">Buka demo</span><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg></a></figcaption>
+    </figure>
+  </div>
+</section>
+
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="bandbox tex reveal">
+      <div>
+        <h2 data-en="Try the demo with sample data.">Coba demonya dengan data contoh.</h2>
+        <p class="lead" data-en="The demo runs in your browser and needs no sign-up. When it fits, start with a Pilot Pack: chips and a reader for your first 50 tools, Rp1,750,000.">Demo berjalan di browser Anda dan tidak perlu mendaftar. Kalau cocok, mulai dengan Paket Pilot: chip dan reader untuk 50 alat pertama, Rp1.750.000.</p>
+      </div>
+      <div class="cta">
+        <a class="btn btn-gold " href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span data-en="Try the demo">Coba demo</span><span class="arr"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></span></a>
+        <a class="btn btn-plain" href="pilot.html"><span data-en="Request a Pilot Pack">Minta Paket Pilot</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="24" height="24">ABHITEK</a>
+    <nav aria-label="Tautan" data-en-aria-label="Links"><a href="kenapa-chip.html" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips">Chip</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing">Harga</a><a href="pilot.html" data-en="Pilot Pack">Paket Pilot</a><a href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener">Demo</a></nav>
+    <span>© 2026 ABHITEK</span>
+  </div>
+</footer>
+<a class="sticky" href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span><b data-en="Try the demo">Coba demo</b> <span data-en="in your browser, no sign-up">di browser, tanpa daftar</span></span><span class="go"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></span></a>
+
+<script src="app.js" defer></script>
+</body>
 </html>

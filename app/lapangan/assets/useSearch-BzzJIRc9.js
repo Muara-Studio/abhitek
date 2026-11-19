@@ -1,0 +1,1 @@
+import{bn as e}from"./kit-oqO31YY2.js";function t(t){return e({from:t.from,strict:t.strict,shouldThrow:t.shouldThrow,structuralSharing:t.structuralSharing,select:e=>t.select?t.select(e.search):e.search})}export{t};
