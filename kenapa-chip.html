@@ -22,10 +22,10 @@
   <div class="wrap">
     <div class="bar">
       <a class="brand" href="index.html" aria-label="ABHITEK"><img src="assets/logo.svg" alt="" width="28" height="28">ABHITEK</a>
-      <nav class="nav" aria-label="Halaman" data-en-aria-label="Pages"><a href="kenapa-chip.html" aria-current="page" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips & readers">Chip & reader</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing">Harga</a><a href="pilot.html" data-en="Pilot Pack">Paket Pilot</a></nav>
+      <nav class="nav" aria-label="Halaman" data-en-aria-label="Pages"><a href="kenapa-chip.html" aria-current="page" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips & readers">Chip & reader</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing & Pilot Pack">Harga & Paket Pilot</a></nav>
       <details class="menu">
         <summary aria-label="Menu"><svg width="20" height="20" aria-hidden="true"><use href="assets/icons.svg#menu-2"/></svg></summary>
-        <nav aria-label="Halaman" data-en-aria-label="Pages"><a href="kenapa-chip.html" aria-current="page" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips & readers">Chip & reader</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing">Harga</a><a href="pilot.html" data-en="Pilot Pack">Paket Pilot</a></nav>
+        <nav aria-label="Halaman" data-en-aria-label="Pages"><a href="kenapa-chip.html" aria-current="page" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips & readers">Chip & reader</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing & Pilot Pack">Harga & Paket Pilot</a></nav>
       </details>
       <button class="theme" type="button" aria-label="Ganti tampilan terang atau gelap" data-en-aria-label="Switch between light and dark"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#sun"/></svg><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#moon"/></svg></button>
       <div class="lang" role="group" aria-label="Bahasa" data-en-aria-label="Language">
@@ -114,27 +114,65 @@
 </section>
 
 <section id="rekam" class="invert tint">
-  <div class="wrap life">
-    <div class="life-left reveal">
-      <h2 data-en="One record per tool, from purchase to disposal.">Satu rekam per alat, dari dibeli sampai dilepas.</h2>
-      <p class="lead" data-en="Each event adds one line to the same record. Pick a stage.">Setiap kejadian menambah satu baris ke rekam yang sama. Pilih tahapnya.</p>
-      <div class="steps" role="tablist" aria-label="Tahap hidup alat" data-en-aria-label="Stages in the life of a tool">
-        <button type="button" role="tab"><i>1</i><span data-en="Buy">Beli</span></button>
-        <button type="button" role="tab"><i>2</i><span data-en="Register">Daftar</span></button>
-        <button type="button" role="tab"><i>3</i><span data-en="Lock the chip">Kunci chip</span></button>
-        <button type="button" role="tab"><i>4</i><span data-en="Hand over">Serah-terima</span></button>
-        <button type="button" role="tab"><i>5</i><span data-en="Inspect">Inspeksi</span></button>
-        <button type="button" role="tab"><i>6</i><span data-en="Maintain">Perawatan</span></button>
-        <button type="button" role="tab"><i>7</i><span data-en="Dispose">Lepas</span></button>
+  <div class="wrap">
+    <div class="lf-track" id="lf-track" style="--n:7">
+      <div class="lf-sticky" id="lf-sticky">
+        <div class="lf-panel">
+          <div class="lf-side">
+            <h2 data-en="One record per tool, from purchase to disposal.">Satu rekam per alat, dari dibeli sampai dilepas.</h2>
+            <p class="lead" data-en="Each event adds one line to the same record. Scroll, or pick a stage.">Setiap kejadian menambah satu baris ke rekam yang sama. Gulir, atau pilih tahapnya.</p>
+            <div class="steps lf-steps" id="lf-steps" role="tablist" aria-label="Tahap hidup alat" data-en-aria-label="Stages in the life of a tool">
+              <div class="lf-step"><button type="button" role="tab"><i>1</i><span data-en="Buy">Beli</span></button><div class="lf-b"><p></p></div></div>
+              <div class="lf-step"><button type="button" role="tab"><i>2</i><span data-en="Register">Daftar</span></button><div class="lf-b"><p></p></div></div>
+              <div class="lf-step"><button type="button" role="tab"><i>3</i><span data-en="Lock the chip">Kunci chip</span></button><div class="lf-b"><p></p></div></div>
+              <div class="lf-step"><button type="button" role="tab"><i>4</i><span data-en="Hand over">Serah-terima</span></button><div class="lf-b"><p></p></div></div>
+              <div class="lf-step"><button type="button" role="tab"><i>5</i><span data-en="Inspect">Inspeksi</span></button><div class="lf-b"><p></p></div></div>
+              <div class="lf-step"><button type="button" role="tab"><i>6</i><span data-en="Maintain">Perawatan</span></button><div class="lf-b"><p></p></div></div>
+              <div class="lf-step"><button type="button" role="tab"><i>7</i><span data-en="Dispose">Lepas</span></button><div class="lf-b"><p></p></div></div>
+            </div>
+            <p class="sr" id="life-say" aria-live="polite"></p>
+          </div>
+          <div class="lf-stage">
+            <div class="lf-scene" id="lf-scene" data-step="0" aria-hidden="true">
+              <div class="lf-obj lf-po" data-on="0">
+                <p class="lf-k"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#shopping-cart"/></svg><span data-en="Purchase order">Pesanan pembelian</span></p>
+                <dl><div><dt data-en="Supplier">Pemasok</dt><dd data-en="Sample supplier">Pemasok contoh</dd></div><div><dt data-en="Order number">Nomor pesanan</dt><dd>PO-0318</dd></div><div><dt data-en="Date">Tanggal</dt><dd data-en="3 Mar 2026">3 Mar 2026</dd></div></dl>
+              </div>
+              <div class="lf-obj lf-box" data-on="0"><svg width="30" height="30" aria-hidden="true"><use href="assets/icons.svg#package"/></svg><span data-en="1 helmet">1 helm</span></div>
+              <div class="lf-obj lf-cat" data-on="1">
+                <p class="lf-k"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#books"/></svg><span data-en="Main catalogue">Katalog utama</span></p>
+                <ul><li class="on"><b>Kask</b><span>Zenith X2</span><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#check"/></svg></li><li><b>Edelrid</b><span>TECTUM</span></li><li><b>Climbing Technology</b><span>Aries</span></li></ul>
+              </div>
+              <div class="lf-obj lf-tag" data-on="1"><span data-en="Internal code">Kode internal</span><b>ORG1-APD-0451</b></div>
+              <div class="lf-obj lf-helm" data-on="2 3 4 5 6">
+                <img src="assets/produk/helm-cut.webp" width="1382" height="929" loading="lazy" alt="">
+                <span class="lf-ring" data-on="2"></span>
+              </div>
+              <div class="lf-obj lf-lock" data-on="2"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#lock"/></svg><span><b data-en="Chip locked">Chip terkunci</b><small>04:26:66:6C:83:E5:F8:3E</small></span></div>
+              <div class="lf-obj lf-phone iphone" data-on="2 3 4 5"><div class="ip-screen"><p class="ip-status" aria-hidden="true"><b>9.41</b><span><svg aria-hidden="true"><use href="assets/icons.svg#antenna-bars-5"/></svg><svg aria-hidden="true"><use href="assets/icons.svg#wifi"/></svg><svg aria-hidden="true"><use href="assets/icons.svg#battery-4"/></svg></span></p><img class="lf-scr" data-s="rekam" src="assets/app/hp-helm-rekam.webp" width="804" height="1630" loading="lazy" alt=""><img class="lf-scr" data-s="inspeksi" src="assets/app/hp-helm-inspeksi.webp" width="804" height="1630" loading="lazy" alt=""></div></div>
+              <div class="lf-obj lf-hand" data-on="3"><span class="who"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#building-warehouse"/></svg><span data-en="Warehouse">Gudang</span></span><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#arrow-right"/></svg><span class="who on"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#user-check"/></svg>Andi Pratama</span></div>
+              <div class="lf-obj lf-chip ok lf-c1" data-on="3"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#circle-check"/></svg><span data-en="Confirmed by the receiver">Dikonfirmasi penerima</span></div>
+              <div class="lf-obj lf-chip ok lf-c2" data-on="4"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#circle-check"/></svg><span data-en="Inspection passed">Inspeksi lulus</span></div>
+              <div class="lf-obj lf-chip lf-c3" data-on="4"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#checklist"/></svg><span data-en="Checklist for this model">Checklist untuk model ini</span></div>
+              <div class="lf-obj lf-chip warn lf-c4" data-on="5"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#hand-stop"/></svg><span data-en="Held back: cannot be handed over">Ditahan: tidak bisa diserahkan</span></div>
+              <div class="lf-obj lf-chip ok lf-c5" data-on="5"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#tool"/></svg><span data-en="Repair done">Perbaikan selesai</span></div>
+              <div class="lf-obj lf-appr" data-on="6">
+                <p class="lf-k"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#user-check"/></svg><span data-en="Approval in two levels">Persetujuan dua tingkat</span></p>
+                <ul><li><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#circle-check"/></svg><span data-en="Requested by the admin">Diajukan admin</span></li><li><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#circle-check"/></svg><span data-en="Approved by a second person">Disetujui orang kedua</span></li></ul>
+              </div>
+              <div class="lf-obj lf-chip lf-c6" data-on="6"><svg width="16" height="16" aria-hidden="true"><use href="assets/icons.svg#archive"/></svg><span data-en="The record stays as evidence">Rekam tetap tersimpan</span></div>
+            </div>
+            <div class="sheet" role="tabpanel">
+              <header>
+                <div><b data-en="Kask Zenith X2 helmet">Helm Kask Zenith X2</b><span data-en="ORG1-APD-0451 · sample record">ORG1-APD-0451 · contoh rekam</span></div>
+                <span class="pill" data-en="Item record">Rekam barang</span>
+              </header>
+              <ol class="timeline" id="life-list"></ol>
+            </div>
+            <p class="lf-note" data-en="A sample record. The product picture is an illustration; the phone screens are from the demo.">Contoh rekam. Gambar produk adalah ilustrasi; layar ponsel diambil dari demo.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="sheet reveal" role="tabpanel">
-      <header>
-        <div><b>Full Body Harness Petzl AVAO</b><span data-en="ORG1-APD-0451 · sample record">ORG1-APD-0451 · contoh rekam</span></div>
-        <span class="pill" data-en="Item record">Rekam barang</span>
-      </header>
-      <p class="explain" id="life-say" aria-live="polite"></p>
-      <ol class="timeline" id="life-list"></ol>
     </div>
   </div>
 </section>
@@ -149,7 +187,7 @@
       </div>
       <div class="cta">
         <a class="btn btn-gold " href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span data-en="Try the demo">Coba demo</span><span class="arr"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></span></a>
-        <a class="btn btn-plain" href="pilot.html"><span data-en="Request a Pilot Pack">Minta Paket Pilot</span></a>
+        <a class="btn btn-plain" href="harga.html#pilot"><span data-en="Request a Pilot Pack">Minta Paket Pilot</span></a>
       </div>
     </div>
   </div>
@@ -158,9 +196,27 @@
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="24" height="24">ABHITEK</a>
-    <nav aria-label="Tautan" data-en-aria-label="Links"><a href="kenapa-chip.html" aria-current="page" data-en="Why a chip">Kenapa chip</a><a href="katalog.html" data-en="Catalogue">Katalog</a><a href="chip.html" data-en="Chips & readers">Chip & reader</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="harga.html" data-en="Pricing">Harga</a><a href="pilot.html" data-en="Pilot Pack">Paket Pilot</a><a href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener">Demo</a></nav>
-    <span>© 2026 ABHITEK</span>
+    <div class="foot">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="28" height="28">ABHITEK</a>
+        <p data-en="A digital identity for safety equipment and office inventory: one NFC chip locked to each item.">Identitas digital untuk alat keselamatan dan inventaris kantor: satu chip NFC yang dikunci ke tiap barang.</p>
+        <a class="btn btn-gold " href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span data-en="Try the demo">Coba demo</span><span class="arr"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></span></a>
+      </div>
+      <nav aria-label="Produk" data-en-aria-label="Product"><p class="foot-h" data-en="Product">Produk</p>
+        <a href="kenapa-chip.html" data-en="Why a chip">Kenapa chip</a><a href="chip.html" data-en="Chips & readers">Chip & reader</a><a href="aplikasi.html" data-en="The app">Aplikasi</a><a href="katalog.html" data-en="Catalogue">Katalog</a>
+      </nav>
+      <nav aria-label="Mulai" data-en-aria-label="Start"><p class="foot-h" data-en="Start">Mulai</p>
+        <a href="harga.html" data-en="Pricing">Harga</a><a href="harga.html#pilot" data-en="Pilot Pack">Paket Pilot</a><a href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener" data-en="Try the demo">Coba demo</a>
+      </nav>
+      <nav aria-label="Kontak" data-en-aria-label="Contact"><p class="foot-h" data-en="Contact">Kontak</p>
+        <a href="mailto:hello@abhitek.id">hello@abhitek.id</a><a href="harga.html#pilot" data-en="Ask for a quote">Minta penawaran</a>
+      </nav>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 ABHITEK</span>
+      <span data-en="Brand names and logos belong to their owners.">Nama dan logo merek adalah milik pemiliknya masing-masing.</span>
+      <a href="#atas" data-en="Back to top">Kembali ke atas</a>
+    </div>
   </div>
 </footer>
 <a class="sticky" href="https://muara-studio.github.io/abhitek/app/" target="_blank" rel="noopener"><span><b data-en="Try the demo">Coba demo</b> <span data-en="in your browser, no sign-up">di browser, tanpa daftar</span></span><span class="go"><svg width="18" height="18" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></span></a>

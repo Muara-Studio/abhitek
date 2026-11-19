@@ -1,0 +1,1 @@
+import{Fr as e,Lr as t}from"./kit-DY7Yfp31.js";var n=t(e(),1),r={};function i(e,t){let i=n.useRef(r);return i.current===r&&(i.current=e(t)),i}function a(){}var o=Object.freeze([]),s=Object.freeze({}),c=typeof document<`u`?n.useLayoutEffect:()=>{};export{i as a,a as i,o as n,s as r,c as t};

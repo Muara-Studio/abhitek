@@ -110,20 +110,52 @@
   const lifeList = $('#life-list')
   if (lifeList) {
     let at = 3
-    const btns = $$('.steps button')
+    const btns = $$('.steps button'), says = $$('.lf-b p'), scene = $('#lf-scene'), track = $('#lf-track'), pin = $('#lf-sticky'), rail = $('#lf-steps')
+    const objs = scene ? $$('[data-on]', scene) : []
+    // Wide screens with motion allowed: the section is pinned and the scroll moves through the stages (the pattern of the
+    // "Cara kerja" section on the Providea Loyalty site). Otherwise a stage is picked by a tap.
+    const flow = matchMedia('(min-width: 961px) and (prefers-reduced-motion: no-preference)')
+    let holdY = null // a click is scrolling to this position: the scroll must not pick the stages on the way
     const draw = () => {
-      lifeList.innerHTML = LIFE.map((s, i) => `<li class="${i > at ? 'off next' : ''}"><span>${t(...s.line)}<small>${t(...s.sub)}</small></span><time>${t(...s.when)}</time></li>`).join('')
+      lifeList.innerHTML = LIFE.map((s, i) => `<li class="${i > at ? 'off next' : i === at ? 'cur' : ''}"><span>${t(...s.line)}<small>${t(...s.sub)}</small></span><time>${t(...s.when)}</time></li>`).join('')
       $('#life-say').textContent = t(...LIFE[at].say)
-      btns.forEach((b, i) => { b.setAttribute('aria-selected', String(i === at)); b.tabIndex = i === at ? 0 : -1 })
+      says.forEach((el, i) => { el.textContent = t(...LIFE[i].say) })
+      btns.forEach((b, i) => { b.setAttribute('aria-selected', String(i === at)); b.tabIndex = i === at ? 0 : -1; b.parentElement.classList.toggle('done', i < at) })
+      if (scene) { scene.dataset.step = String(at); for (const o of objs) o.classList.toggle('on', o.dataset.on.split(' ').includes(String(at))) }
+    }
+    const geo = () => ({ top: parseFloat(getComputedStyle(pin).top) || 0, r: track.getBoundingClientRect(), total: Math.max(1, track.offsetHeight - pin.offsetHeight) })
+    const sync = () => {
+      if (!track || !flow.matches) return
+      const g = geo(), part = Math.min(1, Math.max(0, (g.top - g.r.top) / g.total))
+      rail.style.setProperty('--lf-p', part.toFixed(4))
+      const i = Math.min(LIFE.length - 1, Math.floor(part * LIFE.length))
+      if (holdY !== null && Math.abs(scrollY - holdY) < 4) holdY = null
+      if (holdY === null && i !== at) { at = i; draw() }
+    }
+    const go = (i) => {
+      at = i; draw()
+      if (!track || !flow.matches) return
+      const g = geo(), y = Math.round(scrollY + g.r.top - g.top + ((i + 0.5) / LIFE.length) * g.total)
+      holdY = y
+      setTimeout(() => { if (holdY === y) { holdY = null; sync() } }, 1600)
+      scrollTo({ top: y, behavior: 'smooth' })
     }
     btns.forEach((b, i) => {
-      b.addEventListener('click', () => { at = i; draw() })
+      b.addEventListener('click', () => go(i))
       b.addEventListener('keydown', (e) => {
         const d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key]
         if (!d) return
-        e.preventDefault(); at = (at + d + LIFE.length) % LIFE.length; draw(); btns[at].focus()
+        e.preventDefault(); go((at + d + LIFE.length) % LIFE.length); btns[at].focus({ preventScroll: true })
       })
     })
+    if (track) {
+      let raf = 0
+      const on = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; sync() }) }
+      addEventListener('scroll', on, { passive: true }); addEventListener('resize', on); flow.addEventListener('change', on)
+      // The person scrolls by hand while a click is still travelling: the scroll leads again.
+      for (const ev of ['wheel', 'touchstart']) addEventListener(ev, () => { holdY = null }, { passive: true })
+      if (flow.matches) { at = 0; on() }
+    }
     renders.push(draw)
   }
 
@@ -248,32 +280,65 @@
     const q = document.querySelector('#fq'), brand = document.querySelector('#fb'), chips = document.querySelector('#ft'), out = document.querySelector('#fr'), count = document.querySelector('#fc'), moreBtn = document.querySelector('#fm')
     const params = new URLSearchParams(location.search)
     let rows = [], kind = [...KINDS, ...OFFICE_KINDS].some((k) => k[0] === params.get('jenis')) ? params.get('jenis') : '', shown = 24
+    // Two groups, never one mixed list. A brand that has an office type belongs to office equipment with all its rows.
+    const OFFICE_SET = new Set(OFFICE_KINDS.map((k) => k[0])), gtabs = [...document.querySelectorAll('#fg [data-g]')]
+    let grp = OFFICE_SET.has(kind) || params.get('kelompok') === 'kantor' ? 'o' : 'k', officeBrands = new Set()
+    const inGrp = (r, g = grp) => officeBrands.has(r[0]) === (g === 'o')
+    const num = (n) => n.toLocaleString(lang === 'en' ? 'en-GB' : 'id-ID')
+    const fillBrands = () => {
+      const names = [...new Set(rows.filter((r) => inGrp(r)).map((r) => r[0]))].filter(Boolean).sort((a, b) => a.localeCompare(b))
+      brand.innerHTML = `<option value="">${t('Semua merek', 'All brands')}</option>` + names.map((n) => `<option>${esc(n)}</option>`).join('')
+    }
     q.value = params.get('q') ?? ''
     const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
     const label = (k) => { const x = [...KINDS, ...OFFICE_KINDS].find((y) => y[0] === k); return x ? t(x[1], x[2]) : t('Lainnya', 'Other') }
     const draw = () => {
       const chip = ([k, id, en]) => `<button class="chipbtn" type="button" data-k="${k}" aria-pressed="${k === kind}">${t(id, en)}</button>`
-      chips.innerHTML = `<span class="lbl">${t('Alat keselamatan', 'Safety equipment')}</span>${KINDS.map(chip).join('')}<span class="brk"></span><span class="lbl">${t('Alat kantor', 'Office equipment')}</span>${OFFICE_KINDS.map(chip).join('')}`
+      chips.innerHTML = (grp === 'o' ? [KINDS[0], ...OFFICE_KINDS] : KINDS).map(chip).join('')
+      for (const b of gtabs) b.setAttribute('aria-selected', String(b.dataset.g === grp))
       if (!rows.length) { count.textContent = t('Memuat katalog...', 'Loading the catalogue...'); return }
       const words = q.value.toLowerCase().split(/\s+/).filter(Boolean)
-      const hit = rows.filter((r) => (!kind || r[3] === kind) && (!brand.value || r[0] === brand.value) && words.every((w) => (r[0] + ' ' + r[1] + ' ' + r[2]).toLowerCase().includes(w)))
-      const n = hit.length.toLocaleString(lang === 'en' ? 'en-GB' : 'id-ID'), all = rows.length.toLocaleString(lang === 'en' ? 'en-GB' : 'id-ID')
-      count.innerHTML = hit.length ? t(`<b>${n}</b> model cocok, dari ${all} model di katalog.`, `<b>${n}</b> matching models, out of ${all} in the catalogue.`)
+      const pool = rows.filter((r) => inGrp(r))
+      for (const g of ['k', 'o']) { const part = rows.filter((r) => inGrp(r, g)); document.querySelector(`#fg-${g}-n`).textContent = t(`${num(part.length)} model, ${new Set(part.map((r) => r[0])).size} merek`, `${num(part.length)} models, ${new Set(part.map((r) => r[0])).size} brands`) }
+      const hit = pool.filter((r) => (!kind || r[3] === kind) && (!brand.value || r[0] === brand.value) && words.every((w) => (r[0] + ' ' + r[1] + ' ' + r[2]).toLowerCase().includes(w)))
+      const n = num(hit.length), all = num(pool.length), what = grp === 'o' ? t('alat kantor', 'office equipment') : t('alat keselamatan', 'safety equipment')
+      count.innerHTML = hit.length ? t(`<b>${n}</b> model cocok, dari ${all} model ${what} di katalog.`, `<b>${n}</b> matching models, out of ${all} ${what} models in the catalogue.`)
         : t('Tidak ada model yang cocok. Coba kata lain, atau tambahkan model itu sendiri saat mendaftarkan alat.', 'No model matches. Try another word, or add that model yourself when you register the tool.')
       out.innerHTML = hit.slice(0, shown).map((r) => `<article class="model"><p class="b"><span>${esc(r[0])}</span><em>${r[3] === 'lain' ? '' : label(r[3])}</em></p><h3>${esc(r[1])}</h3><p class="std">${r[2] ? r[2].split(', ').slice(0, 3).map((x) => `<span>${esc(x)}</span>`).join('') : ''}</p></article>`).join('')
       moreBtn.hidden = hit.length <= shown
     }
     chips.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; kind = b.dataset.k; shown = 24; draw() })
+    for (const b of gtabs) b.addEventListener('click', () => { if (grp === b.dataset.g) return; grp = b.dataset.g; kind = ''; shown = 24; fillBrands(); draw() })
     q.addEventListener('input', () => { shown = 24; draw() })
     brand.addEventListener('change', () => { shown = 24; draw() })
     moreBtn.addEventListener('click', () => { shown += 24; draw() })
-    renders.push(draw)
+    renders.push(() => { if (rows.length) { const v = brand.value; fillBrands(); brand.value = v } draw() })
     fetch('assets/katalog.json').then((r) => r.json()).then((d) => {
       rows = d.baris
-      const names = [...new Set(rows.map((r) => r[0]))].filter(Boolean).sort((a, b) => a.localeCompare(b))
-      brand.insertAdjacentHTML('beforeend', names.map((n) => `<option>${esc(n)}</option>`).join(''))
-      draw()
+      officeBrands = new Set(rows.filter((r) => OFFICE_SET.has(r[3])).map((r) => r[0]))
+      fillBrands(); draw()
     }).catch(() => { count.textContent = t('Katalog belum bisa dimuat. Muat ulang halaman ini.', 'The catalogue could not load. Reload this page.') })
+  }
+
+  // ---- dialogs: opened by a button that names one; a click on the backdrop closes it ----
+  for (const b of $$('[data-dialog]')) b.addEventListener('click', () => { const d = document.getElementById(b.dataset.dialog); if (d && d.showModal) d.showModal() })
+  for (const d of $$('dialog.modal')) d.addEventListener('click', (e) => { if (e.target === d) d.close() })
+
+  // ---- the closing band: its yellow glow follows the pointer, and eases home when the pointer leaves ----
+  for (const box of $$('.bandbox')) {
+    let tx = null, ty = 0, cx = 0, cy = 0, raf = 0
+    const home = () => [box.offsetWidth * 0.74, 0]
+    const step = () => {
+      const [hx, hy] = home(), gx = tx ?? hx, gy = tx === null ? hy : ty
+      cx += (gx - cx) * 0.16; cy += (gy - cy) * 0.16
+      box.style.setProperty('--mx', `${cx.toFixed(1)}px`); box.style.setProperty('--my', `${cy.toFixed(1)}px`)
+      if (Math.abs(gx - cx) + Math.abs(gy - cy) > 0.5) raf = requestAnimationFrame(step)
+      else { raf = 0; if (tx === null) { box.style.removeProperty('--mx'); box.style.removeProperty('--my') } }
+    }
+    const run = () => { if (!raf) raf = requestAnimationFrame(step) }
+    box.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'mouse') return; [cx, cy] = home() })
+    box.addEventListener('pointermove', (e) => { if (e.pointerType !== 'mouse') return; const r = box.getBoundingClientRect(); tx = e.clientX - r.left; ty = e.clientY - r.top; calm ? (cx = tx, cy = ty, step()) : run() })
+    box.addEventListener('pointerleave', () => { tx = null; run() })
   }
 
   // ---- quiet arrival of sections ----
