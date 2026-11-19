@@ -107,6 +107,19 @@
 <symbol id="player-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v16l13 -8l-13 -8" /></symbol>
 <symbol id="search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
   <path d="M21 21l-6 -6" /></symbol>
+<symbol id="antenna-bars-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18l0 -3" />
+  <path d="M10 18l0 -6" />
+  <path d="M14 18l0 -9" />
+  <path d="M18 18l0 -12" /></symbol>
+<symbol id="wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18l.01 0" />
+  <path d="M9.172 15.172a4 4 0 0 1 5.656 0" />
+  <path d="M6.343 12.343a8 8 0 0 1 11.314 0" />
+  <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0" /></symbol>
+<symbol id="battery-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h11a2 2 0 0 1 2 2v.5a.5 .5 0 0 0 .5 .5a.5 .5 0 0 1 .5 .5v3a.5 .5 0 0 1 -.5 .5a.5 .5 0 0 0 -.5 .5v.5a2 2 0 0 1 -2 2h-11a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2" />
+  <path d="M7 10l0 4" />
+  <path d="M10 10l0 4" />
+  <path d="M13 10l0 4" />
+  <path d="M16 10l0 4" /></symbol>
 <symbol id="chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6l6 6" /></symbol>
 <symbol id="dots" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
   <path d="M11 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />

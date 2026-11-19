@@ -243,14 +243,17 @@
   if (finderEl) {
     const KINDS = [['', 'Semua', 'All'], ['harness', 'Harness', 'Harnesses'], ['helm', 'Helm', 'Helmets'], ['konektor', 'Karabiner & konektor', 'Carabiners & connectors'], ['descender', 'Descender & ascender', 'Descenders & ascenders'],
       ['tali', 'Tali', 'Rope'], ['lanyard', 'Lanyard', 'Lanyards'], ['anchor', 'Anchor & sling', 'Anchors & slings'], ['pulley', 'Pulley', 'Pulleys'], ['penahan-jatuh', 'Penahan jatuh', 'Fall arresters'], ['peredam', 'Peredam', 'Absorbers'], ['rescue', 'Rescue', 'Rescue']]
+    const OFFICE_KINDS = [['laptop', 'Laptop', 'Laptops'], ['desktop', 'Desktop', 'Desktops'], ['monitor', 'Monitor', 'Monitors'], ['ponsel', 'Ponsel', 'Phones'], ['tablet', 'Tablet', 'Tablets'], ['printer', 'Printer', 'Printers'],
+      ['pemindai', 'Pemindai', 'Scanners'], ['proyektor', 'Proyektor', 'Projectors'], ['periferal', 'Periferal', 'Peripherals'], ['kursi', 'Kursi', 'Chairs'], ['meja', 'Meja', 'Desks'], ['lemari', 'Lemari', 'Cabinets']]
     const q = document.querySelector('#fq'), brand = document.querySelector('#fb'), chips = document.querySelector('#ft'), out = document.querySelector('#fr'), count = document.querySelector('#fc'), moreBtn = document.querySelector('#fm')
     const params = new URLSearchParams(location.search)
-    let rows = [], kind = KINDS.some((k) => k[0] === params.get('jenis')) ? params.get('jenis') : '', shown = 24
+    let rows = [], kind = [...KINDS, ...OFFICE_KINDS].some((k) => k[0] === params.get('jenis')) ? params.get('jenis') : '', shown = 24
     q.value = params.get('q') ?? ''
     const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
-    const label = (k) => { const x = KINDS.find((y) => y[0] === k); return x ? t(x[1], x[2]) : t('Lainnya', 'Other') }
+    const label = (k) => { const x = [...KINDS, ...OFFICE_KINDS].find((y) => y[0] === k); return x ? t(x[1], x[2]) : t('Lainnya', 'Other') }
     const draw = () => {
-      chips.innerHTML = KINDS.map(([k, id, en]) => `<button class="chipbtn" type="button" data-k="${k}" aria-pressed="${k === kind}">${t(id, en)}</button>`).join('')
+      const chip = ([k, id, en]) => `<button class="chipbtn" type="button" data-k="${k}" aria-pressed="${k === kind}">${t(id, en)}</button>`
+      chips.innerHTML = `<span class="lbl">${t('Alat keselamatan', 'Safety equipment')}</span>${KINDS.map(chip).join('')}<span class="brk"></span><span class="lbl">${t('Alat kantor', 'Office equipment')}</span>${OFFICE_KINDS.map(chip).join('')}`
       if (!rows.length) { count.textContent = t('Memuat katalog...', 'Loading the catalogue...'); return }
       const words = q.value.toLowerCase().split(/\s+/).filter(Boolean)
       const hit = rows.filter((r) => (!kind || r[3] === kind) && (!brand.value || r[0] === brand.value) && words.every((w) => (r[0] + ' ' + r[1] + ' ' + r[2]).toLowerCase().includes(w)))

@@ -664,6 +664,64 @@ h2 { font-size: clamp(26px, 2.9vw, 38px); }
 .audpanel .rail { margin: 10px 0 0; }
 .aud > .wrap > .note { margin-top: 12px; }
 
+/* ---------- Round 10 (20 Nov): every phone is an iPhone 16 Pro ---------- */
+/* Proportions from the device: screen 402 x 874 pt, corner about 14% of the width, island 126 x 37 pt, 11 pt from the top.
+   Sizes inside the screen use cqw (1% of the phone's width), so the picture scales as one piece. */
+.iphone { position: relative; container-type: inline-size; aspect-ratio: 402 / 874; padding: 2.3%; border: 3px solid transparent; border-radius: 15.4% / 7.1%;
+  background: linear-gradient(#050506, #050506) padding-box, linear-gradient(142deg, #DAD7D1 0%, #8D8984 20%, #4F4C49 46%, #BEBAB3 72%, #7B7772 100%) border-box;
+  box-shadow: 0 44px 70px -34px rgb(0 0 0 / 0.85); }
+/* The hero phone floats over the stage; the frame's own position must not pull it back into the flow. */
+.hphone.iphone { position: absolute; }
+/* Side buttons: action and volume on the left, power and camera control on the right, each drawn as one bar with gaps. */
+.iphone::before, .iphone::after { content: ''; position: absolute; width: 3px; border-radius: 2px; }
+.iphone::before { left: -6px; top: 16.5%; height: 25%; background: linear-gradient(180deg, #8D8984 0 13%, transparent 13% 25%, #8D8984 25% 58%, transparent 58% 67%, #8D8984 67% 100%); }
+.iphone::after { right: -6px; top: 25%; height: 38%; background: linear-gradient(180deg, #8D8984 0 35%, transparent 35% 76%, #8D8984 76% 100%); }
+.iphone .hscreen, .ip-screen { position: relative; height: 100%; border-radius: 13.4% / 6.2%; overflow: hidden; background: #0B0B0C; color: #F2F1EE; }
+.hscreen::before { display: none; }
+.iphone .hscreen::after, .ip-screen::after { content: ''; position: absolute; z-index: 3; top: 1.28%; left: 50%; width: 31.4%; aspect-ratio: 126 / 37; transform: translateX(-50%); border-radius: 999px; background: #000; box-shadow: inset 0 0 0 0.5px rgb(255 255 255 / 0.06); }
+.ip-status { position: relative; z-index: 2; flex: none; display: flex; align-items: center; justify-content: space-between; height: 6.75%; margin: 0; padding: 0 8.5% 0 12%; color: #fff; font-size: 4cqw; font-weight: 600; letter-spacing: 0; }
+.ip-status span { display: inline-flex; align-items: center; gap: 1.2cqw; }
+.ip-status svg { width: 4.6cqw; height: 4.6cqw; }
+.ip-screen { display: flex; flex-direction: column; }
+.ip-screen img { flex: 1; min-height: 0; width: 100%; border-radius: 0; object-fit: cover; object-position: top; }
+.iphone .hscreen .ip-status { position: absolute; inset: 0 0 auto; }
+.phone.iphone { padding: 2.3%; background: linear-gradient(#050506, #050506) padding-box, linear-gradient(142deg, #DAD7D1 0%, #8D8984 20%, #4F4C49 46%, #BEBAB3 72%, #7B7772 100%) border-box; box-shadow: none; }
+.phone.iphone img { border-radius: 0; }
+.aside-phone.iphone { width: clamp(150px, 17vw, 220px); max-height: none; overflow: visible; padding: 2.3%; margin-bottom: -22%; border-radius: 15.4% / 7.1%; background: linear-gradient(#050506, #050506) padding-box, linear-gradient(142deg, #DAD7D1 0%, #8D8984 20%, #4F4C49 46%, #BEBAB3 72%, #7B7772 100%) border-box; box-shadow: none; }
+.aside-phone.iphone img { border-radius: 0; }
+
+/* The hero phone: a little smaller and less tilted, so it reads as the device. Its screen is laid out in cqw. */
+.herobox .stage.flip .product { margin-inline: 0 25%; aspect-ratio: 1382 / 929; }
+.herobox .stage.flip .hphone { right: 1%; bottom: -9%; width: 31%; padding: 2.3%; border-radius: 15.4% / 7.1%; background: linear-gradient(#050506, #050506) padding-box, linear-gradient(142deg, #DAD7D1 0%, #8D8984 20%, #4F4C49 46%, #BEBAB3 72%, #7B7772 100%) border-box; box-shadow: 0 44px 70px -34px rgb(0 0 0 / 0.85); transform: translate(10px, 60px) rotate(6deg); }
+.herobox .stage.flip[data-open='true'] .hphone { transform: rotate(2.5deg); }
+.stage.flip .tap { width: 14.5%; }
+.hs-idle { padding-top: 10%; gap: 2.4cqw; }
+.hs-idle .disc { width: 24cqw; height: 24cqw; margin-bottom: 3cqw; }
+.hs-idle b { font-size: 6.4cqw; }
+.hs-idle span:last-child { font-size: 4.6cqw; }
+.hs-rec { padding: 15.5% 5% 5%; }
+.hs-top { margin-bottom: 3.2cqw; font-size: 4.2cqw; }
+.hs-top > span { min-height: 9cqw; padding: 0 3.4cqw; gap: 1cqw; }
+.hs-top svg { width: 5cqw; height: 5cqw; }
+.hs-photo { border-radius: 5cqw; margin-bottom: 4cqw; }
+.hs-rec > b { font-size: 6.6cqw; line-height: 1.22; letter-spacing: -0.01em; }
+.hs-rec .hs-code { margin: 1.2cqw 0 3cqw; font-size: 4.2cqw; }
+.hs-pills { gap: 1.8cqw; margin-bottom: 4cqw; }
+.hs-rec .pill { padding: 1cqw 3cqw; font-size: 4cqw; gap: 1.6cqw; }
+.hs-rec .pill.ok::before { width: 2.2cqw; height: 2.2cqw; }
+.hs-tiles { margin-bottom: 3cqw; border-radius: 4.4cqw; }
+.hs-tiles > div { padding: 3cqw 3.2cqw; }
+.hs-tiles dt { font-size: 3.6cqw; }
+.hs-tiles dd { margin-top: 0.6cqw; font-size: 4.5cqw; }
+.hs-next { padding: 3.4cqw 3.6cqw; border-radius: 4.4cqw; font-size: 4cqw; }
+.hs-next b { font-size: 4.5cqw; }
+.hs-actions { gap: 1.6cqw; padding: 2cqw; font-size: 4cqw; }
+.hs-actions span { padding: 3cqw 1cqw; }
+
+.chiprow .lbl { min-width: 118px; color: var(--quiet); font-size: 13px; }
+.chiprow .brk { flex-basis: 100%; height: 0; }
+#ft { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
 /* Buttons (20 Nov): pills. The main one carries its arrow in a dark disc that leans out on hover. */
 .btn { min-height: 52px; padding: 0 24px; border-radius: 999px; font-size: 15px; }
 .btn-gold:has(.arr) { padding-inline-end: 8px; gap: 14px; }
@@ -723,7 +781,12 @@ h2 { font-size: clamp(26px, 2.9vw, 38px); }
   .audtab { min-height: 92px; }
   .devnote { display: block; }
   .herobox .stage.flip .product { margin-inline: 0 26%; }
-  .herobox .stage.flip .hphone { width: 40%; bottom: -10%; }
+  .herobox .stage.flip .hphone { width: 36%; bottom: -12%; }
+  .iphone { border-width: 2px; }
+  .iphone::before, .iphone::after { width: 2px; }
+  .iphone::before { left: -4px; }
+  .iphone::after { right: -4px; }
+  .phone.iphone { width: min(250px, 70%); }
   .typegrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .typetile { min-height: 124px; }
   .modelgrid { grid-template-columns: minmax(0, 1fr); }
@@ -744,11 +807,6 @@ h2 { font-size: clamp(26px, 2.9vw, 38px); }
   .facts li { flex-direction: column; gap: 2px; }
   .facts b { text-align: start; }
   .herobox .stage .product { margin-inline-start: 32%; }
-  .herobox .hphone { width: 40%; border-radius: 28px; padding: 6px; }
-  .hscreen { border-radius: 23px; }
-  .hs-rec { padding: 30px 10px 10px; }
-  .hs-rec .rows > div { padding: 5px 0; }
-  .hs-rec .rows > div:nth-child(n + 3) { display: none; }
   .offerbar { grid-template-columns: minmax(0, 1fr); }
   .offerbar > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 13px 18px; }
   .tiers > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
