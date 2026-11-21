@@ -324,21 +324,49 @@
   for (const b of $$('[data-dialog]')) b.addEventListener('click', () => { const d = document.getElementById(b.dataset.dialog); if (d && d.showModal) d.showModal() })
   for (const d of $$('dialog.modal')) d.addEventListener('click', (e) => { if (e.target === d) d.close() })
 
-  // ---- the closing band: its yellow glow follows the pointer, and eases home when the pointer leaves ----
+  // ---- the closing band: a light that moves like liquid (owner, 21 Nov 2026: the glow that follows was too stiff) ----
+  // The lead light follows the pointer on a spring, so it lags, overshoots a little and settles; a softer light trails
+  // it, and the lead stretches along its travel. The pointer is read on the whole section, so the light turns towards
+  // it before it reaches the box. With no pointer (a phone, or the pointer elsewhere) the light drifts on a slow path.
+  // It runs only while the band is on screen. Reduced motion: no drift, and the light sits where the pointer is.
   for (const box of $$('.bandbox')) {
-    let tx = null, ty = 0, cx = 0, cy = 0, raf = 0
-    const home = () => [box.offsetWidth * 0.74, 0]
-    const step = () => {
-      const [hx, hy] = home(), gx = tx ?? hx, gy = tx === null ? hy : ty
-      cx += (gx - cx) * 0.16; cy += (gy - cy) * 0.16
-      box.style.setProperty('--mx', `${cx.toFixed(1)}px`); box.style.setProperty('--my', `${cy.toFixed(1)}px`)
-      if (Math.abs(gx - cx) + Math.abs(gy - cy) > 0.5) raf = requestAnimationFrame(step)
-      else { raf = 0; if (tx === null) { box.style.removeProperty('--mx'); box.style.removeProperty('--my') } }
+    const zone = box.closest('section') ?? box
+    const lead = { x: 0.74, y: 0, vx: 0, vy: 0 }, trail = { x: 0.74, y: 0, vx: 0, vy: 0 }
+    let aim = null, seen = false, raf = 0, last = 0, glow = 0
+    const spring = (s, gx, gy, k, d, dt) => {
+      s.vx += ((gx - s.x) * k - s.vx * d) * dt; s.vy += ((gy - s.y) * k - s.vy * d) * dt
+      s.x += s.vx * dt; s.y += s.vy * dt
     }
-    const run = () => { if (!raf) raf = requestAnimationFrame(step) }
-    box.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'mouse') return; [cx, cy] = home() })
-    box.addEventListener('pointermove', (e) => { if (e.pointerType !== 'mouse') return; const r = box.getBoundingClientRect(); tx = e.clientX - r.left; ty = e.clientY - r.top; calm ? (cx = tx, cy = ty, step()) : run() })
-    box.addEventListener('pointerleave', () => { tx = null; run() })
+    const pct = (n) => (n * 100).toFixed(2) + '%'
+    const put = (k, v) => box.style.setProperty(k, v)
+    const paint = () => {
+      put('--mx', pct(lead.x)); put('--my', pct(lead.y)); put('--nx', pct(trail.x)); put('--ny', pct(trail.y))
+      put('--gw', pct(0.54 * Math.min(1.45, 1 + Math.abs(lead.vx) * 0.42))); put('--gh', pct(0.78 * Math.min(1.45, 1 + Math.abs(lead.vy) * 0.42)))
+      put('--bx', pct(0.08 + (0.74 - lead.x) * 0.12)); put('--by', pct(1 - lead.y * 0.1)); put('--band-t', glow.toFixed(3))
+    }
+    const frame = (now) => {
+      raf = 0
+      const dt = Math.min(0.05, (now - last) / 1000 || 0.016); last = now
+      const t = now / 1000
+      const rest = { x: 0.7 + 0.16 * Math.sin(t * 0.33), y: 0.05 + 0.12 * Math.sin(t * 0.47 + 1.3) }
+      const to = aim ?? rest
+      spring(lead, to.x, to.y, aim ? 46 : 5, aim ? 9.5 : 4, dt)
+      spring(trail, lead.x, lead.y, 11, 5.4, dt)
+      // The trailing light shows only while the two are apart, so the still picture keeps its one clear light.
+      glow += (Math.min(0.55, Math.hypot(lead.x - trail.x, lead.y - trail.y) * 2.4) - glow) * Math.min(1, dt * 6)
+      paint()
+      if (seen && !document.hidden) raf = requestAnimationFrame(frame)
+    }
+    const run = () => { if (!raf && seen && !calm) { last = performance.now(); raf = requestAnimationFrame(frame) } }
+    const at = (e) => { const r = box.getBoundingClientRect(); return { x: Math.min(1.15, Math.max(-0.15, (e.clientX - r.left) / r.width)), y: Math.min(1.3, Math.max(-0.3, (e.clientY - r.top) / r.height)) } }
+    zone.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return
+      aim = at(e)
+      if (calm) { Object.assign(lead, aim, { vx: 0, vy: 0 }); Object.assign(trail, aim); glow = 0; paint() } else run()
+    })
+    zone.addEventListener('pointerleave', () => { aim = null; run() })
+    new IntersectionObserver(([x]) => { seen = x.isIntersecting; run() }, { rootMargin: '80px' }).observe(box)
+    document.addEventListener('visibilitychange', run)
   }
 
   // ---- quiet arrival of sections ----

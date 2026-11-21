@@ -522,12 +522,17 @@ section:has(+ .extra) { padding-bottom: 16px; }
 
 /* ---------- Round 7 (20 Nov): how it works, the five jobs, what is ready, questions ---------- */
 .herobox h1 { max-width: 18ch; }
-.stepgrid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; counter-reset: none; }
-.stepgrid li { position: relative; display: grid; align-content: start; gap: 8px; padding: 22px 22px 24px; border-radius: var(--r-lg); background: var(--panel); }
-.stepgrid i { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 10px; border-radius: 50%; background: var(--ink); color: var(--bg); font-style: normal; font-weight: 700; font-size: 16px; }
+/* Four steps. Owner, 21 Nov 2026: the cards read as packed, text everywhere. Each card now holds a short title and
+   two short sentences, with more room inside the card (--sp) and between the heading and the cards. The line that
+   joins the numbers is placed from the same --sp, so it stays on the numbers when the padding changes. */
+.steps4 .head { margin-bottom: clamp(40px, 5vw, 64px); }
+.stepgrid { --sp: 30px; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; counter-reset: none; }
+.stepgrid li { position: relative; display: grid; align-content: start; gap: 10px; padding: var(--sp) var(--sp) calc(var(--sp) + 8px); border-radius: var(--r-lg); background: var(--panel); }
+.stepgrid i { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 26px; border-radius: 50%; background: var(--ink); color: var(--bg); font-style: normal; font-weight: 700; font-size: 16px; }
 .stepgrid li:first-child i { background: var(--gold); color: var(--gold-ink); }
-.stepgrid li:not(:last-child)::after { content: ''; position: absolute; top: 41px; left: 74px; right: -16px; height: 1px; background: var(--edge); }
-.stepgrid p { color: var(--grey); font-size: 15px; }
+.stepgrid li:not(:last-child)::after { content: ''; position: absolute; top: calc(var(--sp) + 19.5px); inset-inline: calc(var(--sp) + 52px) -20px; height: 1px; background: var(--edge); }
+.stepgrid h3 { font-size: 20px; line-height: 1.25; }
+.stepgrid p { max-width: 28ch; color: var(--grey); font-size: 15px; line-height: 1.6; }
 .jobs { margin: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0 24px; }
 .jobs > div { padding-top: 16px; border-top: 2px solid var(--hair); }
 .jobs > div:first-child { border-top-color: var(--ink); }
@@ -923,8 +928,14 @@ footer .wrap { display: block; }
 .foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: clamp(36px, 4.4vw, 60px); padding-top: 20px; border-top: 1px solid var(--hair); color: var(--quiet); font-size: 13px; }
 .foot-base a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
-/* Closing band: the glow sits at --mx/--my, which app.js moves with the pointer. */
-.bandbox { background: var(--reed), radial-gradient(54% 78% at var(--mx, 74%) var(--my, 0%), rgb(247 197 49 / var(--band-a, 0.44)), transparent 62%), radial-gradient(40% 62% at 8% 100%, rgb(247 197 49 / 0.16), transparent 70%), var(--reed-base); }
+/* Closing band: three lights that app.js moves. The lead light (--mx/--my) follows the pointer on a spring and
+   stretches along its travel (--gw/--gh); a softer one (--nx/--ny) trails behind it; the corner light (--bx/--by)
+   leans the other way. Without a pointer the lead light drifts slowly. With no script, or with reduced motion, every
+   value falls back to the still picture the other reeded boxes show. */
+.bandbox { background: var(--reed),
+  radial-gradient(var(--gw, 54%) var(--gh, 78%) at var(--mx, 74%) var(--my, 0%), rgb(247 197 49 / var(--band-a, 0.44)), transparent 62%),
+  radial-gradient(48% 72% at var(--nx, 74%) var(--ny, 0%), rgb(247 197 49 / calc(var(--band-a, 0.44) * var(--band-t, 0))), transparent 66%),
+  radial-gradient(40% 62% at var(--bx, 8%) var(--by, 100%), rgb(247 197 49 / 0.16), transparent 70%), var(--reed-base); }
 [data-theme='light'] .bandbox { --band-a: 0.62; }
 
 /* The life of one record (kenapa-chip.html): pinned on wide screens, the scroll moves through seven stages.
@@ -1073,4 +1084,51 @@ footer .wrap { display: block; }
   .lf-obj, .lf-scr, .lf-b { transition: opacity 200ms ease; }
   .lf-ring.on { animation: none; opacity: 0.9; }
   dialog.modal[open] { animation: none; }
+}
+
+/* ---- 21 Nov 2026, owner notes ---- */
+/* The menu: three items, each with its icon. The page you are on is the filled one, with the icon in gold. */
+.nav { gap: 4px; }
+.nav a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px 10px 13px; }
+.nav a svg { flex: none; opacity: 0.66; transition: opacity var(--dur-fast) ease; }
+.nav a:hover svg, .nav a[aria-current] svg { opacity: 1; }
+.nav a[aria-current] { font-weight: 600; }
+:root:not([data-theme='light']) .nav a[aria-current] svg { color: var(--gold); }
+/* The phone menu says what each page holds, so nobody has to open a page to find out. */
+.menu nav { min-width: min(296px, calc(100vw - 32px)); gap: 2px; }
+.menu nav a { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; gap: 12px; min-height: 62px; padding: 8px 14px 8px 8px; }
+.menu nav a .mi { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: rgb(255 255 255 / 0.08); }
+.menu nav a b { display: block; font-size: 15px; font-weight: 600; }
+.menu nav a small { display: block; color: rgb(244 244 242 / 0.64); font-size: 13px; line-height: 1.35; }
+.menu nav a[aria-current] { background: rgb(255 255 255 / 0.07); }
+.menu nav a[aria-current] .mi { background: var(--gold); color: var(--gold-ink); }
+
+/* Page openers: the page name was set as a poster (up to 132 px) and read as too large. It is a heading now, and the
+   object beside it is smaller to match, so the first thing under the menu is the page's content. */
+.pagehead { padding-bottom: clamp(28px, 4vw, 48px); }
+.pagebox { min-height: clamp(190px, 20vw, 260px); }
+.pagebox h1 { font-size: clamp(34px, 4.4vw, 56px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+.pagebox .lead { font-size: clamp(16px, 1.3vw, 18px); max-width: 48ch; }
+.pagetext { gap: 14px; }
+.aside-fig b { font-size: clamp(30px, 3.4vw, 46px); }
+.aside-kit { width: clamp(140px, 15vw, 200px); }
+.aside-phone.iphone { width: clamp(118px, 11.5vw, 156px); }
+/* The phone beside "Aplikasi" stood in the grid and made that opener half as tall again as the others. It hangs
+   from the top edge now and the box cuts it off, so every opener has the same height. */
+.pagebox .aside-phone.iphone { position: absolute; inset-inline-end: clamp(28px, 6vw, 96px); top: clamp(22px, 2.6vw, 34px); margin: 0; }
+/* The phone menu hangs from the bar, not from its own button: the button sits left of the theme and language
+   switches, so a panel wider than 200 px ran off the left edge of the screen. */
+.top .bar { position: relative; }
+.menu { position: static; }
+.menu nav { inset-inline: auto 0; top: calc(100% + 8px); width: min(340px, 100%); min-width: 0; }
+/* "Chip & Harga": the two notes under the products read as one block, and the Pilot Pack stands clear of them. */
+.once + .once { margin-top: 10px; }
+.once + .pack { margin-top: clamp(40px, 5vw, 64px); }
+/* Four steps on a phone: the number sits beside its title, so four cards are not four screens. */
+@media (max-width: 640px) {
+  .steps4 .head { margin-bottom: 32px; }
+  .stepgrid { --sp: 22px; gap: 12px; }
+  .stepgrid li { grid-template-columns: 40px minmax(0, 1fr); column-gap: 14px; align-items: center; row-gap: 12px; }
+  .stepgrid i { margin-bottom: 0; }
+  .stepgrid p { grid-column: 1 / -1; max-width: none; }
 }
