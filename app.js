@@ -268,7 +268,7 @@
 
   // ---- the demo follows the device: a phone opens the field app, a computer opens the desk dashboard ----
   const onPhone = matchMedia('(max-width: 760px)').matches || (matchMedia('(pointer: coarse)').matches && matchMedia('(max-width: 1024px)').matches)
-  if (onPhone) for (const a of document.querySelectorAll('a[href$="/abhitek/app/"]')) a.href = a.href + 'lapangan/'
+  if (onPhone) for (const a of document.querySelectorAll('a[data-demo]')) a.href = a.href + 'lapangan/'
 
   // ---- catalogue finder: every model of the main catalogue, filtered in the browser (assets/katalog.json) ----
   const finderEl = document.querySelector('[data-finder]')
