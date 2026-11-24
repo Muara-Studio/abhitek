@@ -164,6 +164,11 @@
 </section>
 <section id="rekam" class="invert tint">
   <div class="wrap">
+    <!-- On a phone the pinned panel has no room for the heading, so it stands above the track. Only one of the two is shown. -->
+    <div class="lf-head reveal">
+      <h2 data-en="One record per tool, from purchase to disposal.">Satu rekam per alat, dari dibeli sampai dilepas.</h2>
+      <p class="lead" data-en="Each event adds one line to the same record. Scroll, or pick a stage.">Setiap kejadian menambah satu baris ke rekam yang sama. Gulir, atau pilih tahapnya.</p>
+    </div>
     <div class="lf-track" id="lf-track" style="--n:7">
       <div class="lf-sticky" id="lf-sticky">
         <div class="lf-panel">
@@ -179,6 +184,7 @@
               <div class="lf-step"><button type="button" role="tab"><i>6</i><span data-en="Maintain">Perawatan</span></button><div class="lf-b"><p></p></div></div>
               <div class="lf-step"><button type="button" role="tab"><i>7</i><span data-en="Dispose">Lepas</span></button><div class="lf-b"><p></p></div></div>
             </div>
+            <p class="lf-now" aria-hidden="true"><b id="lf-name"></b><span id="lf-count"></span></p>
             <p class="sr" id="life-say" aria-live="polite"></p>
           </div>
           <div class="lf-stage">

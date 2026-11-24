@@ -1042,6 +1042,7 @@ footer .wrap { display: block; }
 .lf-stage .timeline li.cur small { display: block; }
 .lf-stage .timeline li.cur::before { background: var(--gold); box-shadow: 0 0 0 4px color-mix(in srgb, var(--gold) 24%, transparent); }
 .lf-note { position: absolute; left: 18px; bottom: 12px; z-index: 3; color: var(--quiet); font-size: 12px; }
+.lf-head, .lf-now { display: none; }
 
 @media (max-height: 700px) and (min-width: 961px) { .lf-side .lead { display: none; } }
 .nav a { white-space: nowrap; }
@@ -1055,18 +1056,36 @@ footer .wrap { display: block; }
   .plan header, .plansub { min-height: 0; }
   .foot { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .foot-brand { grid-column: 1 / -1; }
-  /* Not pinned: the stages are tapped, and the scene sits between the heading and the list. */
-  .lf-track { height: auto; }
-  .lf-sticky { position: static; height: auto; }
-  .lf-panel { display: flex; flex-direction: column; gap: 14px; height: auto; padding: 18px 14px; }
+  /* Pinned on a phone too (owner, 24 Nov 2026). One column that fills the screen between the header and the demo bar:
+     seven bars for the stages (as in a story), the stage on show with its sentence, the scene, and the record with the
+     line this stage adds. The heading stands above the track. */
+  .lf-head { display: grid; gap: 12px; margin-bottom: 20px; }
+  .lf-side h2, .lf-side .lead { display: none; }
+  .lf-track { --lf-h: calc(100vh - 160px); --lf-h: calc(100svh - 160px); height: calc(var(--lf-h) + var(--n) * 46vh); }
+  .lf-sticky { top: 76px; }
+  .lf-panel { display: flex; flex-direction: column; gap: 10px; padding: 12px 14px; border-radius: 26px; }
   .lf-side { display: contents; }
-  .lf-stage { order: 1; grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 12px; container-type: inline-size; }
-  .lf-scene { justify-self: center; width: min(100%, 460px); }
-  .lf-stage .sheet { transform: none; }
-  .lf-note { position: static; }
-  .lf-steps { order: 2; margin: 0; }
-  .lf-steps::after { display: none; }
-  .lf-steps button { background: none; border-radius: 12px; min-height: 46px; }
+  .lf-steps { order: 1; flex: none; display: grid; grid-template-columns: repeat(var(--n, 7), minmax(0, 1fr)); gap: 5px; margin: 0; }
+  .lf-steps::before, .lf-steps::after { display: none; }
+  .lf-steps button { display: block; min-height: 36px; padding: 0; border-radius: 0; background: none; font-size: 0; }
+  .lf-steps button:hover { background: none; }
+  .lf-steps button i, .lf-steps button span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .lf-steps button::before { content: ''; display: block; height: 4px; border-radius: 4px; background: var(--edge); transition: background-color 240ms ease; }
+  .lf-step.done button::before, .lf-steps button[aria-selected='true']::before { background: var(--gold); }
+  .lf-b { display: none; }
+  .lf-now { order: 2; flex: none; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: -4px 2px 0; }
+  .lf-now b { font-size: 21px; letter-spacing: -0.01em; line-height: 1.25; }
+  .lf-now span { color: var(--quiet); font-size: 13px; white-space: nowrap; }
+  #life-say { order: 3; flex: none; position: static; width: auto; height: auto; min-height: 84px; margin: 0 2px; overflow: visible; clip-path: none; white-space: normal; color: var(--grey); font-size: 14px; line-height: 1.5; }
+  .lf-stage { order: 4; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 8px; padding: 10px; border-radius: 20px; }
+  /* The record takes about 96 px and the note 30 px; the scene is the largest square that leaves them room. */
+  .lf-scene { flex: none; width: min(100cqw, calc(100cqh - 142px), 460px); }
+  .lf-stage .sheet { flex: none; width: 100%; gap: 8px; padding: 12px 14px; border-radius: 16px; transform: none; }
+  .lf-stage .sheet header { padding-bottom: 8px; }
+  .lf-stage .timeline li { display: none; padding: 0 0 0 22px; }
+  .lf-stage .timeline li.cur { display: grid; }
+  .lf-stage .timeline li.cur::after, .lf-stage .timeline li.cur small { display: none; }
+  .lf-note { position: static; flex: none; align-self: stretch; font-size: 11px; line-height: 1.35; }
 }
 @media (max-width: 640px) {
   .herobox { padding-top: 25vw; }
@@ -1078,9 +1097,15 @@ footer .wrap { display: block; }
   footer { padding-bottom: 104px; }
   .modal .tiers { padding: 4px 16px; }
 }
+/* A short phone: the record card leaves, so the scene keeps its size. */
+@media (max-width: 960px) and (max-height: 780px) {
+  .lf-stage .sheet { display: none; }
+  .lf-scene { width: min(100cqw, calc(100cqh - 40px), 460px); }
+}
 @media (prefers-reduced-motion: reduce) {
   .lf-track { height: auto; }
   .lf-sticky { position: static; }
+  .lf-steps button { min-height: 44px; }
   .lf-obj, .lf-scr, .lf-b { transition: opacity 200ms ease; }
   .lf-ring.on { animation: none; opacity: 0.9; }
   dialog.modal[open] { animation: none; }

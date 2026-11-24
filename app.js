@@ -112,9 +112,10 @@
     let at = 3
     const btns = $$('.steps button'), says = $$('.lf-b p'), scene = $('#lf-scene'), track = $('#lf-track'), pin = $('#lf-sticky'), rail = $('#lf-steps')
     const objs = scene ? $$('[data-on]', scene) : []
-    // Wide screens with motion allowed: the section is pinned and the scroll moves through the stages (the pattern of the
-    // "Cara kerja" section on the Providea Loyalty site). Otherwise a stage is picked by a tap.
-    const flow = matchMedia('(min-width: 961px) and (prefers-reduced-motion: no-preference)')
+    // With motion allowed the section is pinned, on a phone too, and the scroll moves through the stages (the pattern of
+    // the "Cara kerja" section on the Providea Loyalty site). With reduced motion a stage is picked by a tap.
+    const flow = matchMedia('(prefers-reduced-motion: no-preference)')
+    const nowName = $('#lf-name'), nowCount = $('#lf-count')
     let holdY = null // a click is scrolling to this position: the scroll must not pick the stages on the way
     const draw = () => {
       lifeList.innerHTML = LIFE.map((s, i) => `<li class="${i > at ? 'off next' : i === at ? 'cur' : ''}"><span>${t(...s.line)}<small>${t(...s.sub)}</small></span><time>${t(...s.when)}</time></li>`).join('')
@@ -122,6 +123,7 @@
       says.forEach((el, i) => { el.textContent = t(...LIFE[i].say) })
       btns.forEach((b, i) => { b.setAttribute('aria-selected', String(i === at)); b.tabIndex = i === at ? 0 : -1; b.parentElement.classList.toggle('done', i < at) })
       if (scene) { scene.dataset.step = String(at); for (const o of objs) o.classList.toggle('on', o.dataset.on.split(' ').includes(String(at))) }
+      if (nowName) { nowName.textContent = btns[at].querySelector('span').textContent; nowCount.textContent = `${at + 1} / ${LIFE.length}` }
     }
     const geo = () => ({ top: parseFloat(getComputedStyle(pin).top) || 0, r: track.getBoundingClientRect(), total: Math.max(1, track.offsetHeight - pin.offsetHeight) })
     const sync = () => {
