@@ -1,0 +1,251 @@
+# ABHITEK
+
+> ABHITEK keeps the records of safety equipment and office inventory. Each item gets one NFC chip that is locked to it; a tap of a phone on the chip opens the record of the item: its holder, inspections, maintenance and condition. It is built for teams in Indonesia and comes in six languages.
+
+Site: https://abhitek.co/ (Indonesian at the root; English under https://abhitek.co/en/, Korean under https://abhitek.co/ko/, Japanese under https://abhitek.co/ja/, Arabic under https://abhitek.co/ar/)
+Demo with sample data, no sign-up: https://app.abhitek.co/
+
+## Pages
+- [Home](https://abhitek.co/en/): Each tool gets one locked NFC chip. Tap a phone on it to see its holder, its inspections and whether it is fit for use. Free up to 100 items per organisation.
+- [Tool Catalogue](https://abhitek.co/en/katalog.html): Search 3,107 models of harnesses, helmets, carabiners, rope, laptops and printers from 29 brands. Pick a model when you register an item, so nobody types the specification again.
+- [The App](https://abhitek.co/en/aplikasi.html): A web app for admins and HSE managers, a phone app for inspectors and technicians. Inspections, handovers and damage reports in six languages.
+- [Chips & Pricing](https://abhitek.co/en/harga.html): No subscription fee. Free up to 100 items per organisation, NFC chips from Rp12,000, a USB reader for Rp850,000 and a Pilot Pack at Rp1,750,000 for your first 50 tools.
+- [An inspection app for PPE and work-at-height equipment](https://abhitek.co/en/inspeksi-apd.html): Record inspections of harnesses, helmets, carabiners and rope from a phone. One NFC chip per tool, a checklist per type, and damaged tools held back until repaired.
+- [An office asset inventory app for General Affairs](https://abhitek.co/en/inventaris-kantor.html): Record office laptops, phones, printers, desks and chairs: who holds each one, in which room, and its condition. Free up to 100 items per organisation.
+- [NFC chip, QR code or barcode: which one fits your equipment?](https://abhitek.co/en/nfc-vs-qr-barcode.html): A barcode or a QR code holds a number that can be copied. An NFC chip has a factory number that cannot be changed. See the comparison and when each one is enough.
+- [Frequently asked questions about ABHITEK](https://abhitek.co/en/faq.html): Short answers about ABHITEK: what it is, who it is for, cost, supported phones, inspections without a signal, who sees the data and how to try the demo.
+- [Terms used in equipment records](https://abhitek.co/en/istilah.html): What the terms of equipment records mean: PPE, periodic inspection, handover, NFC chip, UID, internal code, audit trail and more.
+- [ABHITEK updates](https://abhitek.co/en/pembaruan.html): Dated notes on changes to the ABHITEK app, the tool catalogue and the abhitek.co site.
+
+## Key facts
+- Who it is for: safety and rope access teams (harnesses, helmets, carabiners, rope) and General Affairs teams (laptops, phones, printers, desks, chairs). One person with their own gear can use it too.
+- Chips: one NFC chip per item, locked for good. A chip cannot be moved to another item; a damaged chip is replaced, the reason is recorded and the old chip number is blocked.
+- Apps: a desk app in the browser for admins and safety managers, and a phone app for inspectors and technicians. The inspection checklist works without a signal.
+- Phones: an Android phone with NFC reads a chip from the Chrome browser. On an iPhone the record opens when the item code is typed. A USB reader reads chips at a desk.
+- Catalogue: 3,107 equipment models from 29 makers, ready to pick when an item is registered. Makers' names and logos belong to their owners; ABHITEK is not affiliated with them.
+- Records: every change is recorded and kept at least 5 years. Deleting an item needs approval in two levels. Records can be exported to Excel.
+- Privacy: the ABHITEK platform admin sees account data and chip orders only, not a customer's items, inspections or reports.
+
+## Pricing (Indonesian rupiah)
+- No subscription fee. Free up to 100 active items per organisation and 75 for a personal account.
+- NFC chips from Rp12,000 each. USB reader Rp850,000.
+- Pilot Pack Rp1,750,000: 50 chips (25 anti-metal stickers, 15 rope labels, 10 carabiner chips), 1 USB reader and a fitting guide.
+- Extra quota is bought once for 6, 12 or 24 months, from 50 items. Price per item for the whole pack: 50 to 199 items Rp2,000 / Rp3,400 / Rp5,600; 200 to 499 items Rp1,700 / Rp2,800 / Rp4,600; 500 to 999 items Rp1,400 / Rp2,300 / Rp3,800; 1,000 items and more Rp1,150 / Rp1,900 / Rp3,000. A pack does not renew by itself; when it ends the data stays and only adding new items is held back.
+- Chip fitting at the customer's location: Rp10,000 per item, minimum Rp2,000,000 per visit.
+
+## What ABHITEK does not claim
+- No customer names, ratings or certifications are published. ABHITEK is opening its first pilots.
+- No measured speed or durability figures are published.
+- The public demo holds sample data only.
+
+## An inspection app for PPE and work-at-height equipment
+
+ABHITEK records the inspection of safety equipment on the tool itself. Each harness, helmet, carabiner and rope gets one NFC chip. The inspector taps a phone on the chip, fills in the checklist, and the result stays on the record of that tool.
+
+### The problems it solves
+- An inspection schedule in a spreadsheet is easy to miss, because nothing shows which tools are due today.
+- A number on a sticker can fade, come off or be swapped, so the history of one tool mixes with another.
+- A tool that was reported as damaged can still be taken to the field.
+- In an audit it is hard to show who inspected the tool, when, and with what result.
+
+### How it works
+1. Register the tool from the catalogue: Pick the model from the 3,107 models in the catalogue. The brand, the model and the standards for that type of equipment fill in by themselves.
+2. Fit and lock the chip: One chip for one tool. Once it is locked, the chip cannot be moved to another tool.
+3. Inspect from the phone: Tap the phone on the chip, then fill in the checklist for that type of equipment. The checklist works without a signal too.
+4. Damaged tools are held back: A tool that fails cannot be handed over until its repair is done and recorded.
+
+### What is recorded for each tool
+- Holder: Who holds the tool now. A handover counts only after the receiver confirms it.
+- Inspections: The date, the inspector, the answer to each point of the checklist and the final result.
+- Maintenance: The damage report, the repair that was done and the date it was finished.
+- Documents: Certificates and other documents of the tool, kept with its record.
+- Audit trail: Every change is recorded and kept at least 5 years.
+
+### Questions about inspections
+Q: How often must safety equipment be inspected?
+A: Follow the instructions of the maker and the safety rules of your workplace. Many makers ask for a check before each use and a periodic examination at least once a year by a competent person. ABHITEK keeps the due date of each tool and shows the tools that are due.
+
+Q: Can an inspection be done without a signal?
+A: Yes. The inspection checklist in the phone app can be filled in without a signal. The result is kept on the phone and sent when the phone is connected again.
+
+Q: What happens when a tool fails its inspection?
+A: The tool is held back. A damaged tool cannot be handed to anyone until its repair is done and recorded.
+
+Q: Which phones can read the chip?
+A: An Android phone with NFC reads the chip straight from the Chrome browser. On an iPhone, the app opens the record of an item when you type its item code. At a desk, a USB reader reads the chip.
+
+
+## An office asset inventory app for General Affairs
+
+ABHITEK records office items one by one. Each laptop, phone, monitor, printer, desk and chair has one NFC chip and one record: who holds it, which room it is in, and its condition.
+
+### The problems it solves
+- An inventory list in a spreadsheet goes out of date fast, because moves are not recorded when they happen.
+- When an employee joins, moves or leaves, it is not clear which items they received and returned.
+- A broken item is found only when the next person needs it.
+
+### How it works
+1. Register the item from the catalogue: The catalogue holds models of laptops, desktops, monitors, phones, tablets, printers, projectors, chairs, desks and cabinets from 12 makers.
+2. Record its location: A location is written as a path, for example Main Warehouse, Storage Room, Rack 1. Items are easy to find at a stock count.
+3. Two-sided handover: An item counts as held by an employee after that employee confirms, by tapping the chip or entering a code.
+4. Report damage from the phone: Whoever holds the item can report damage. The report goes into the repair queue.
+
+### What kind of office it suits
+- An office that wants to know the number and condition of its items without a count from zero.
+- A General Affairs team that handles item handovers for many employees.
+- An organisation that also has safety equipment: both are recorded in one app.
+
+### Questions about office inventory
+Q: What does it cost for a small office?
+A: Up to 100 items the app is free. You buy only the chips, from Rp12,000 each, and one USB reader for Rp850,000 if you want to read chips at a desk.
+
+Q: Can an item be recorded before its chip is fitted?
+A: Yes. Register the item first with its internal code, then fit the chip at any time. Without a chip, the record of the item opens when you type its code.
+
+Q: Can our data be taken out of ABHITEK?
+A: Yes. The records of items, inspections and handovers can be exported to Excel at any time.
+
+Q: Who can see our data?
+A: Only the people in your organisation, by their role. The ABHITEK platform admin sees account data and your chip orders, not your items, inspections or reports.
+
+
+## NFC chip, QR code or barcode: which one fits your equipment?
+
+A barcode or a QR code holds a number that can be copied or printed again. An NFC chip has a number from the chip factory, called the UID, that cannot be changed. So one chip stands for one tool only, and an inspection history cannot move to another tool.
+
+### A short comparison
+| Point | Barcode or QR sticker | NFC chip |
+| --- | --- | --- |
+| Identity | A printed number. It can be copied and printed again. | A UID from the chip factory. It cannot be changed or copied to another sticker. |
+| How it is read | A phone camera or a scanner. | A phone with NFC held against it, or a USB reader at a desk. |
+| When it is damaged | The same number is printed again. | The chip is replaced, the reason is recorded, and the old UID is blocked. |
+| Difficult surfaces | A sticker can fade or come off on rope, metal and equipment that is washed often. | There are chips made for metal, for rope and for high temperature. |
+| Cost | Very low per sticker. | From Rp12,000 per chip. |
+
+### When a barcode or a QR code is enough
+For items that are cheap, are not safety items and need no one-by-one proof in an audit. Examples are consumables and warehouse stock that is counted by quantity.
+
+### When an NFC chip fits better
+For equipment whose history must stay with one unit: fall protection, equipment with periodic inspections, and items that change hands. Because the UID cannot be copied, the record of one tool cannot be claimed by another.
+
+### How ABHITEK uses it
+Each item has an internal code that can be typed and one locked NFC chip. The internal code and the serial number of the maker are kept in two separate fields. The chip is read by an Android phone with NFC or a USB reader; on an iPhone, the record of the item opens with its code.
+
+### Questions about chips
+Q: Can a chip be moved to another tool?
+A: No. A chip is locked to one tool for good. A damaged chip is replaced with a new one, the reason is recorded, and the number of the old chip goes on the block list.
+
+Q: Which phones can read the chip?
+A: An Android phone with NFC reads the chip straight from the Chrome browser. On an iPhone, the app opens the record of an item when you type its item code. At a desk, a USB reader reads the chip.
+
+Q: Can an item be recorded before its chip is fitted?
+A: Yes. Register the item first with its internal code, then fit the chip at any time. Without a chip, the record of the item opens when you type its code.
+
+Q: Do we have to fit the chips ourselves?
+A: You can, with the fitting guide in the Pilot Pack. Or an ABHITEK technician fits them at your location for Rp10,000 per item, with a minimum of Rp2,000,000 per visit.
+
+
+## Frequently asked questions about ABHITEK
+
+Short answers to what people ask most. If your question is not here, send it through the form on the Chips & Pricing page.
+
+### About ABHITEK
+Q: What is ABHITEK?
+A: ABHITEK is an app that keeps the records of safety equipment and office inventory. Each item gets one NFC chip that is locked to it. Tap a phone on the chip and the record of the item opens: its holder, inspections, maintenance and condition.
+
+Q: Who is ABHITEK for?
+A: For safety and rope access teams that manage harnesses, helmets, carabiners and rope, and for General Affairs teams that manage office laptops, phones, printers, desks and chairs. One person with their own gear can use it too.
+
+Q: How can we try ABHITEK?
+A: Open the demo at app.abhitek.co. It runs in the browser with sample data and needs no sign-up. When it fits, start with a Pilot Pack: chips and a reader for your first 50 tools.
+
+Q: Which languages does the app come in?
+A: Six languages: Indonesian, English, Chinese, Japanese, Korean and Arabic. Each person picks their own language.
+
+Q: Does the app have to be downloaded from an app store?
+A: No. The desk app and the phone app open in a browser. The phone app can be added to the home screen from that browser.
+
+
+### Pricing and quota
+Q: Is there a subscription fee?
+A: No. The app is free up to 100 items per organisation and 75 items for a personal account. You pay for chips and readers, and for extra quota only when you have more items.
+
+Q: What happens when an extra quota pack ends?
+A: Your data stays. The limit returns to the free quota, so only adding new items is held back until you buy a pack again. History, reports and export stay open.
+
+Q: What does it cost for a small office?
+A: Up to 100 items the app is free. You buy only the chips, from Rp12,000 each, and one USB reader for Rp850,000 if you want to read chips at a desk.
+
+
+### Chips and phones
+Q: Can a chip be moved to another tool?
+A: No. A chip is locked to one tool for good. A damaged chip is replaced with a new one, the reason is recorded, and the number of the old chip goes on the block list.
+
+Q: Which phones can read the chip?
+A: An Android phone with NFC reads the chip straight from the Chrome browser. On an iPhone, the app opens the record of an item when you type its item code. At a desk, a USB reader reads the chip.
+
+Q: Can an item be recorded before its chip is fitted?
+A: Yes. Register the item first with its internal code, then fit the chip at any time. Without a chip, the record of the item opens when you type its code.
+
+Q: Do we have to fit the chips ourselves?
+A: You can, with the fitting guide in the Pilot Pack. Or an ABHITEK technician fits them at your location for Rp10,000 per item, with a minimum of Rp2,000,000 per visit.
+
+
+### Inspections
+Q: How often must safety equipment be inspected?
+A: Follow the instructions of the maker and the safety rules of your workplace. Many makers ask for a check before each use and a periodic examination at least once a year by a competent person. ABHITEK keeps the due date of each tool and shows the tools that are due.
+
+Q: Can an inspection be done without a signal?
+A: Yes. The inspection checklist in the phone app can be filled in without a signal. The result is kept on the phone and sent when the phone is connected again.
+
+Q: What happens when a tool fails its inspection?
+A: The tool is held back. A damaged tool cannot be handed to anyone until its repair is done and recorded.
+
+
+### Your data
+Q: Who can see our data?
+A: Only the people in your organisation, by their role. The ABHITEK platform admin sees account data and your chip orders, not your items, inspections or reports.
+
+Q: Can our data be taken out of ABHITEK?
+A: Yes. The records of items, inspections and handovers can be exported to Excel at any time.
+
+
+## Terms used in equipment records
+
+Short meanings of the terms used in ABHITEK and in the records of safety equipment and office inventory.
+
+### Equipment and its checks
+- PPE (personal protective equipment): Equipment a person wears for protection against hazards at work, for example a helmet, a harness and gloves.
+- Rope access: A way to work at height with ropes as the means to go up, to go down and to be held. Its equipment includes harnesses, descenders, ascenders, carabiners and rope.
+- Pre-use check: A short check by the user before the equipment is used.
+- Periodic inspection: A thorough examination at set intervals by a competent person, with a recorded result.
+- Inspection checklist: The list of points to check for one type of equipment. In ABHITEK the checklist follows the type of equipment.
+- Held back: The status of a tool that is damaged or failed its inspection. It cannot be handed over until its repair is recorded as done.
+
+### Records and identity
+- Equipment record: One sheet of history for one tool: purchase, registration, holders, inspections, maintenance, until the tool is disposed of.
+- NFC chip: A small chip without a battery that a phone or a reader reads from a few centimetres away.
+- UID: The unique number that the factory puts into an NFC chip. This number cannot be changed.
+- Internal code: The code your organisation gives to an item, for example ORG1-APD-0451. It is not the serial number of the maker.
+- Maker serial number: The number the maker prints on the equipment. It is kept in its own field, apart from the internal code.
+- Main catalogue: The list of models from makers that can be picked when an item is registered, so nobody types the specification again.
+
+### People and process
+- Handover: The move of an item from one holder to another. It is recorded after the receiver confirms.
+- Holder: The person who is responsible for an item at the moment.
+- Audit trail: The record of every change: who, when and what was changed. ABHITEK keeps it at least 5 years.
+- General Affairs: The office department that looks after items, rooms and work facilities.
+- Occupational safety and health: The safety and health of people at work. The safety team looks after safety equipment and its inspections.
+- Item quota: The number of active items an account can record. The free quota is 100 items per organisation; a quota pack adds to that number for 6, 12 or 24 months.
+
+## ABHITEK updates
+
+Short notes on what changed in the app, the catalogue and the site. The newest is on top.
+
+### November 2026
+- 2026-11-24: New addresses. The site moved to abhitek.co and the app demo to app.abhitek.co. Old links are forwarded to the new addresses.
+- 2026-11-24: The site in five languages. The site is available in Indonesian, English, Korean, Japanese and Arabic, with guide pages and a questions page.
+- 2026-11-21: A shorter menu. The site menu has three items: Tool Catalogue, The App, and Chips & Pricing. The chip page joined the pricing page.
+- 2026-11-20: Office equipment joins the catalogue. The main catalogue gained 275 office models from 12 makers: laptops, monitors, phones, printers, chairs, desks and more.
+- 2026-11-20: A new look for the phone app. The bottom buttons of the phone app were tidied: yellow marks actions only, and the buttons no longer cover the page.
+- 2026-11-19: Item list with location and photos. In the desk app the location of an item shows as a path, and the item list can be seen as a photo gallery.

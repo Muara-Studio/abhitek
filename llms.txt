@@ -1,0 +1,39 @@
+# ABHITEK
+
+> ABHITEK keeps the records of safety equipment and office inventory. Each item gets one NFC chip that is locked to it; a tap of a phone on the chip opens the record of the item: its holder, inspections, maintenance and condition. It is built for teams in Indonesia and comes in six languages.
+
+Site: https://abhitek.co/ (Indonesian at the root; English under https://abhitek.co/en/, Korean under https://abhitek.co/ko/, Japanese under https://abhitek.co/ja/, Arabic under https://abhitek.co/ar/)
+Demo with sample data, no sign-up: https://app.abhitek.co/
+
+## Pages
+- [Home](https://abhitek.co/en/): Each tool gets one locked NFC chip. Tap a phone on it to see its holder, its inspections and whether it is fit for use. Free up to 100 items per organisation.
+- [Tool Catalogue](https://abhitek.co/en/katalog.html): Search 3,107 models of harnesses, helmets, carabiners, rope, laptops and printers from 29 brands. Pick a model when you register an item, so nobody types the specification again.
+- [The App](https://abhitek.co/en/aplikasi.html): A web app for admins and HSE managers, a phone app for inspectors and technicians. Inspections, handovers and damage reports in six languages.
+- [Chips & Pricing](https://abhitek.co/en/harga.html): No subscription fee. Free up to 100 items per organisation, NFC chips from Rp12,000, a USB reader for Rp850,000 and a Pilot Pack at Rp1,750,000 for your first 50 tools.
+- [An inspection app for PPE and work-at-height equipment](https://abhitek.co/en/inspeksi-apd.html): Record inspections of harnesses, helmets, carabiners and rope from a phone. One NFC chip per tool, a checklist per type, and damaged tools held back until repaired.
+- [An office asset inventory app for General Affairs](https://abhitek.co/en/inventaris-kantor.html): Record office laptops, phones, printers, desks and chairs: who holds each one, in which room, and its condition. Free up to 100 items per organisation.
+- [NFC chip, QR code or barcode: which one fits your equipment?](https://abhitek.co/en/nfc-vs-qr-barcode.html): A barcode or a QR code holds a number that can be copied. An NFC chip has a factory number that cannot be changed. See the comparison and when each one is enough.
+- [Frequently asked questions about ABHITEK](https://abhitek.co/en/faq.html): Short answers about ABHITEK: what it is, who it is for, cost, supported phones, inspections without a signal, who sees the data and how to try the demo.
+- [Terms used in equipment records](https://abhitek.co/en/istilah.html): What the terms of equipment records mean: PPE, periodic inspection, handover, NFC chip, UID, internal code, audit trail and more.
+- [ABHITEK updates](https://abhitek.co/en/pembaruan.html): Dated notes on changes to the ABHITEK app, the tool catalogue and the abhitek.co site.
+
+## Key facts
+- Who it is for: safety and rope access teams (harnesses, helmets, carabiners, rope) and General Affairs teams (laptops, phones, printers, desks, chairs). One person with their own gear can use it too.
+- Chips: one NFC chip per item, locked for good. A chip cannot be moved to another item; a damaged chip is replaced, the reason is recorded and the old chip number is blocked.
+- Apps: a desk app in the browser for admins and safety managers, and a phone app for inspectors and technicians. The inspection checklist works without a signal.
+- Phones: an Android phone with NFC reads a chip from the Chrome browser. On an iPhone the record opens when the item code is typed. A USB reader reads chips at a desk.
+- Catalogue: 3,107 equipment models from 29 makers, ready to pick when an item is registered. Makers' names and logos belong to their owners; ABHITEK is not affiliated with them.
+- Records: every change is recorded and kept at least 5 years. Deleting an item needs approval in two levels. Records can be exported to Excel.
+- Privacy: the ABHITEK platform admin sees account data and chip orders only, not a customer's items, inspections or reports.
+
+## Pricing (Indonesian rupiah)
+- No subscription fee. Free up to 100 active items per organisation and 75 for a personal account.
+- NFC chips from Rp12,000 each. USB reader Rp850,000.
+- Pilot Pack Rp1,750,000: 50 chips (25 anti-metal stickers, 15 rope labels, 10 carabiner chips), 1 USB reader and a fitting guide.
+- Extra quota is bought once for 6, 12 or 24 months, from 50 items. Price per item for the whole pack: 50 to 199 items Rp2,000 / Rp3,400 / Rp5,600; 200 to 499 items Rp1,700 / Rp2,800 / Rp4,600; 500 to 999 items Rp1,400 / Rp2,300 / Rp3,800; 1,000 items and more Rp1,150 / Rp1,900 / Rp3,000. A pack does not renew by itself; when it ends the data stays and only adding new items is held back.
+- Chip fitting at the customer's location: Rp10,000 per item, minimum Rp2,000,000 per visit.
+
+## What ABHITEK does not claim
+- No customer names, ratings or certifications are published. ABHITEK is opening its first pilots.
+- No measured speed or durability figures are published.
+- The public demo holds sample data only.

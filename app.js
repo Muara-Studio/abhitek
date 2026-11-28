@@ -6,29 +6,15 @@
   root.classList.add('js')
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  // ---- language: Indonesian in the markup, English in data-en ----
-  let lang = 'id'
-  try { lang = localStorage.getItem('abhitek.profil.lang') === 'en' ? 'en' : 'id' } catch { /* storage blocked: Indonesian */ }
-  const ATTRS = ['placeholder', 'aria-label', 'alt', 'content', 'data-l']
+  // ---- language: each language is its own static page (tools/build.mjs writes them), so the script only picks its own
+  // strings. English is the key of the other languages' dictionary (assets/i18n/<lang>.js, loaded before this file). ----
+  const lang = root.lang || 'id'
+  const DICT = window.ABHITEK_I18N || {}
+  const LOCALE = { id: 'id-ID', en: 'en-GB', ko: 'ko-KR', ja: 'ja-JP' }[lang] ?? 'en-GB'
   const renders = []
-  function setLang(next) {
-    lang = next
-    root.lang = lang
-    for (const el of $$('[data-en]')) {
-      if (el.dataset.id === undefined) el.dataset.id = el.innerHTML
-      el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.id
-    }
-    for (const a of ATTRS) for (const el of $$(`[data-en-${a}]`)) {
-      const key = `id${a.replace(/(^|-)(\w)/g, (_, __, c) => c.toUpperCase())}`
-      if (el.dataset[key] === undefined) el.dataset[key] = el.getAttribute(a) ?? ''
-      el.setAttribute(a, lang === 'en' ? el.getAttribute(`data-en-${a}`) : el.dataset[key])
-    }
-    for (const b of $$('.lang button')) b.setAttribute('aria-pressed', String(b.dataset.lang === lang))
-    renders.forEach((f) => f())
-    try { localStorage.setItem('abhitek.profil.lang', lang) } catch { /* fine */ }
-  }
-  const t = (id, en) => (lang === 'en' ? en : id)
-  for (const b of $$('.lang button')) b.addEventListener('click', () => setLang(b.dataset.lang))
+  const t = (id, en) => (lang === 'id' ? id : lang === 'en' ? en : DICT[en] ?? en)
+  /** A string with {name} places, filled after the language is picked. */
+  const tf = (id, en, vars) => t(id, en).replace(/\{(\w+)\}/g, (_, k) => vars[k])
 
   // ---- light and dark: the choice is kept in this browser; dark is the brand default ----
   const themeBtn = $('.theme')
@@ -82,7 +68,7 @@
     const draw = () => {
       const a = AUTH[pick]
       answer.className = `answer ${a.ok ? 'yes' : 'no'}`
-      answer.innerHTML = `<p class="state"><svg width="44" height="44" aria-hidden="true"><use href="assets/icons.svg#${a.ok ? 'circle-check' : 'circle-x'}"/></svg><span><b>${t(...a.pill)}</b>${t(...a.title)}</span></p>
+      answer.innerHTML = `<p class="state"><svg width="44" height="44" aria-hidden="true"><use href="/assets/icons.svg#${a.ok ? 'circle-check' : 'circle-x'}"/></svg><span><b>${t(...a.pill)}</b>${t(...a.title)}</span></p>
         <ol class="timeline">${a.steps.map((s) => `<li><span>${t(...s)}</span></li>`).join('')}</ol>`
       for (const b of $$('.chip-btn')) b.setAttribute('aria-pressed', String(b.dataset.chip === pick))
     }
@@ -234,7 +220,7 @@
       const note = $('#pilot-note')
       try {
         await navigator.clipboard.writeText(`${subject()}\n${t('Kepada', 'To')}: ${form.dataset.to}\n\n${text()}`)
-        note.textContent = t('Tersalin. Tempel di email atau WhatsApp, lalu kirim ke ' + form.dataset.to + '.', 'Copied. Paste it into an email or a chat and send it to ' + form.dataset.to + '.')
+        note.textContent = tf('Tersalin. Tempel di email atau WhatsApp, lalu kirim ke {to}.', 'Copied. Paste it into an email or a chat and send it to {to}.', { to: form.dataset.to })
       } catch {
         note.textContent = t('Browser ini tidak mengizinkan salin otomatis. Pakai tombol email.', 'This browser does not allow copying. Use the email button.')
       }
@@ -249,6 +235,11 @@
     io.observe(pilot); if (hero) io.observe(hero)
   }
   for (const a of $$('.menu a')) a.addEventListener('click', () => a.closest('details').removeAttribute('open'))
+  // The menu and the language list close when a click lands outside them, and with Escape.
+  for (const d of $$('details.menu, details.langmenu')) {
+    document.addEventListener('click', (e) => { if (d.open && !d.contains(e.target)) d.removeAttribute('open') })
+    d.addEventListener('keydown', (e) => { if (e.key === 'Escape' && d.open) { d.removeAttribute('open'); d.querySelector('summary').focus() } })
+  }
 
   // ---- brand rails: a second copy of each list makes the loop seamless; a button, hover or focus pauses them ----
   const rails = [...document.querySelectorAll('[data-rail]')]
@@ -286,7 +277,7 @@
     const OFFICE_SET = new Set(OFFICE_KINDS.map((k) => k[0])), gtabs = [...document.querySelectorAll('#fg [data-g]')]
     let grp = OFFICE_SET.has(kind) || params.get('kelompok') === 'kantor' ? 'o' : 'k', officeBrands = new Set()
     const inGrp = (r, g = grp) => officeBrands.has(r[0]) === (g === 'o')
-    const num = (n) => n.toLocaleString(lang === 'en' ? 'en-GB' : 'id-ID')
+    const num = (n) => n.toLocaleString(LOCALE)
     const fillBrands = () => {
       const names = [...new Set(rows.filter((r) => inGrp(r)).map((r) => r[0]))].filter(Boolean).sort((a, b) => a.localeCompare(b))
       brand.innerHTML = `<option value="">${t('Semua merek', 'All brands')}</option>` + names.map((n) => `<option>${esc(n)}</option>`).join('')
@@ -301,12 +292,17 @@
       if (!rows.length) { count.textContent = t('Memuat katalog...', 'Loading the catalogue...'); return }
       const words = q.value.toLowerCase().split(/\s+/).filter(Boolean)
       const pool = rows.filter((r) => inGrp(r))
-      for (const g of ['k', 'o']) { const part = rows.filter((r) => inGrp(r, g)); document.querySelector(`#fg-${g}-n`).textContent = t(`${num(part.length)} model, ${new Set(part.map((r) => r[0])).size} merek`, `${num(part.length)} models, ${new Set(part.map((r) => r[0])).size} brands`) }
+      for (const g of ['k', 'o']) { const part = rows.filter((r) => inGrp(r, g)); document.querySelector(`#fg-${g}-n`).textContent = tf('{n} model, {b} merek', '{n} models, {b} brands', { n: num(part.length), b: new Set(part.map((r) => r[0])).size }) }
       const hit = pool.filter((r) => (!kind || r[3] === kind) && (!brand.value || r[0] === brand.value) && words.every((w) => (r[0] + ' ' + r[1] + ' ' + r[2]).toLowerCase().includes(w)))
+        // Models with a picture first, each part still in the order of the list: a page of empty tiles tells nothing.
+        .sort((x, y) => (y[4] ? 1 : 0) - (x[4] ? 1 : 0))
       const n = num(hit.length), all = num(pool.length), what = grp === 'o' ? t('alat kantor', 'office equipment') : t('alat keselamatan', 'safety equipment')
-      count.innerHTML = hit.length ? t(`<b>${n}</b> model cocok, dari ${all} model ${what} di katalog.`, `<b>${n}</b> matching models, out of ${all} ${what} models in the catalogue.`)
+      count.innerHTML = hit.length ? tf('<b>{n}</b> model cocok, dari {all} model {what} di katalog.', '<b>{n}</b> matching models, out of {all} {what} models in the catalogue.', { n, all, what })
         : t('Tidak ada model yang cocok. Coba kata lain, atau tambahkan model itu sendiri saat mendaftarkan alat.', 'No model matches. Try another word, or add that model yourself when you register the tool.')
-      out.innerHTML = hit.slice(0, shown).map((r) => `<article class="model"><p class="b"><span>${esc(r[0])}</span><em>${r[3] === 'lain' ? '' : label(r[3])}</em></p><h3>${esc(r[1])}</h3><p class="std">${r[2] ? r[2].split(', ').slice(0, 3).map((x) => `<span>${esc(x)}</span>`).join('') : ''}</p></article>`).join('')
+      // The fifth field of a row names its picture in assets/katalog/ (360 px WebP); the browser loads it when the card
+      // comes near the screen.
+      const pic = (r) => `<div class="mpic">${r[4] ? `<img src="/assets/katalog/${r[4]}.webp" alt="${esc(r[0])} ${esc(r[1])}" width="360" height="270" loading="lazy" decoding="async">` : '<svg width="28" height="28" aria-hidden="true"><use href="/assets/icons.svg#package"/></svg>'}</div>`
+      out.innerHTML = hit.slice(0, shown).map((r) => `<article class="model">${pic(r)}<p class="b"><span>${esc(r[0])}</span><em>${r[3] === 'lain' ? '' : label(r[3])}</em></p><h3>${esc(r[1])}</h3><p class="std">${r[2] ? r[2].split(', ').slice(0, 3).map((x) => `<span>${esc(x)}</span>`).join('') : ''}</p></article>`).join('')
       moreBtn.hidden = hit.length <= shown
     }
     chips.addEventListener('click', (e) => { const b = e.target.closest('button'); if (!b) return; kind = b.dataset.k; shown = 24; draw() })
@@ -315,7 +311,7 @@
     brand.addEventListener('change', () => { shown = 24; draw() })
     moreBtn.addEventListener('click', () => { shown += 24; draw() })
     renders.push(() => { if (rows.length) { const v = brand.value; fillBrands(); brand.value = v } draw() })
-    fetch('assets/katalog.json').then((r) => r.json()).then((d) => {
+    fetch('/assets/katalog.json').then((r) => r.json()).then((d) => {
       rows = d.baris
       officeBrands = new Set(rows.filter((r) => OFFICE_SET.has(r[3])).map((r) => r[0]))
       fillBrands(); draw()
@@ -375,5 +371,5 @@
   const reveal = new IntersectionObserver((es) => { for (const x of es) if (x.isIntersecting) { x.target.classList.add('in'); reveal.unobserve(x.target) } }, { rootMargin: '0px 0px -10% 0px' })
   for (const el of $$('.reveal')) reveal.observe(el)
 
-  setLang(lang)
+  renders.forEach((f) => f())
 })()
